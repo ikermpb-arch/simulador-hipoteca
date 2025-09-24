@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Avanzado - Hipotecas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 60%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .calculate-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+            margin: 20px 0;
+        }
+
+        .calculate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .results.show {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .results-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .results-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 500;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .result-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #059669;
+        }
+
+        .highlight {
+            color: #dc2626 !important;
+            font-size: 1.3rem !important;
+        }
+
+        .amortization-table {
+            grid-column: 1 / -1;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .table th,
+        .table td {
+            padding: 8px 12px;
+            text-align: right;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .table th {
+            background: #e2e8f0;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .results.show {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .table {
+                font-size: 0.8rem;
+            }
+
+            .table th,
+            .table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Volver al inicio</a>
+            <nav class="nav-links">
+                <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador Sencillo</a>
+                <a href="contacto.html" class="nav-link">💬 Contacto</a>
+                <a href="privacidad.html" class="nav-link">🔒 Privacidad</a>
+            </nav>
+            <h1 class="title">📊 Simulador Avanzado</h1>
+            <p class="subtitle">Análisis completo con tabla de amortización</p>
+        </div>
+
+        <form id="advancedMortgageForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="propertyValue" class="form-label">Valor de la vivienda (€)</label>
+                    <input type="number" id="propertyValue" class="form-input" placeholder="Ej: 250000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="downPayment" class="form-label">Entrada (€)</label>
+                    <input type="number" id="downPayment" class="form-input" placeholder="Ej: 50000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rate" class="form-label">Tipo de interés anual (%)</label>
+                    <input type="number" id="rate" class="form-input" step="0.01" placeholder="Ej: 3.5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="years" class="form-label">Años del préstamo</label>
+                    <input type="number" id="years" class="form-input" placeholder="Ej: 30" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expenses" class="form-label">Gastos adicionales (€)</label>
+                    <input type="number" id="expenses" class="form-input" placeholder="Ej: 5000" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="mortgageType" class="form-label">Tipo de hipoteca</label>
+                    <select id="mortgageType" class="form-select">
+                        <option value="fixed">Tipo fijo</option>
+                        <option value="variable">Tipo variable</option>
+                        <option value="mixed">Tipo mixto</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="calculate-button">Calcular Hipoteca Avanzada</button>
+        </form>
+
+        <div id="results" class="results">
+            <div class="results-section">
+                <h3 class="results-title">Resumen del Préstamo</h3>
+                <div class="result-item">
+                    <span class="result-label">Importe solicitado:</span>
+                    <span class="result-value" id="loanAmount">€0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">% Financiación:</span>
+                    <span class="result-value" id="loanPercentage">0%</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Cuota mensual:</span>
+                    <span class="result-value highlight" id="monthlyPayment">€0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Tipo de hipoteca:</span>
+                    <span class="result-value" id="mortgageTypeResult">-</span>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h3 class="results-title">Costos Totales</h3>
+                <div class="result-item">
+                    <span class="result-label">Total a pagar:</span>
+                    <span class="result-value" id="totalPayment">€0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Intereses totales:</span>
+                    <span class="result-value" id="totalInterest">€0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Gastos adicionales:</span>
+                    <span class="result-value" id="totalExpenses">€0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Costo total real:</span>
+                    <span class="result-value highlight" id="totalRealCost">€0</span>
+                </div>
+            </div>
+
+            <div class="amortization-table">
+                <h3 class="results-title">Tabla de Amortización (Primeros 24 meses)</h3>
+                <table class="table" id="amortizationTable">
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Cuota</th>
+                            <th>Capital</th>
+                            <th>Intereses</th>
+                            <th>Pendiente</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amortizationBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('advancedMortgageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores
+            const propertyValue = parseFloat(document.getElementById('propertyValue').value);
+            const downPayment = parseFloat(document.getElementById('downPayment').value);
+            const loanAmount = propertyValue - downPayment;
+            const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
+            const years = parseInt(document.getElementById('years').value);
+            const months = years * 12;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const mortgageType = document.getElementById('mortgageType').value;
+            
+            // Calcular cuota mensual
+            const monthlyPayment = loanAmount * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+            const totalPayment = monthlyPayment * months;
+            const totalInterest = totalPayment - loanAmount;
+            const loanPercentage = (loanAmount / propertyValue) * 100;
+            const totalRealCost = downPayment + totalPayment + expenses;
+            
+            // Tipo de hipoteca en español
+            const mortgageTypes = {
+                'fixed': 'Tipo Fijo',
+                'variable': 'Tipo Variable',
+                'mixed': 'Tipo Mixto'
+            };
+            
+            // Mostrar resultados básicos
+            document.getElementById('loanAmount').textContent = '€' + loanAmount.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            document.getElementById('loanPercentage').textContent = loanPercentage.toFixed(1) + '%';
+            document.getElementById('monthlyPayment').textContent = '€' + monthlyPayment.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            document.getElementById('mortgageTypeResult').textContent = mortgageTypes[mortgageType];
+            document.getElementById('totalPayment').textContent = '€' + totalPayment.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            document.getElementById('totalInterest').textContent = '€' + totalInterest.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            document.getElementById('totalExpenses').textContent = '€' + expenses.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            document.getElementById('totalRealCost').textContent = '€' + totalRealCost.toLocaleString('es-ES', {minimumFractionDigits: 2});
+            
+            // Generar tabla de amortización (primeros 24 meses)
+            const tbody = document.getElementById('amortizationBody');
+            tbody.innerHTML = '';
+            
+            let remainingBalance = loanAmount;
+            
+            for (let month = 1; month <= Math.min(24, months); month++) {
+                const interestPayment = remainingBalance * rate;
+                const principalPayment = monthlyPayment - interestPayment;
+                remainingBalance -= principalPayment;
+                
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${month}</td>
+                    <td>€${monthlyPayment.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
+                    <td>€${principalPayment.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
+                    <td>€${interestPayment.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
+                    <td>€${remainingBalance.toLocaleString('es-ES', {minimumFractionDigits: 2})}</td>
+                `;
+            }
+            
+            // Mostrar resultados
+            document.getElementById('results').classList.add('show');
+        });
+    </script>
+</body>
+</html>

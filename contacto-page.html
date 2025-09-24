@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Simulador de Hipotecas</title>
+    <meta name="description" content="Contáctanos para resolver tus dudas sobre hipotecas. Te ayudamos a encontrar la mejor opción para tu situación financiera.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 60%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 8px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .nav-link.secondary {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .nav-link.secondary:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.3s forwards;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.5s forwards;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #718096;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.7s forwards;
+        }
+
+        @keyframes titleSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-form {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: formSlideUp 1s ease-out 0.9s forwards;
+        }
+
+        @keyframes formSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .form-label .required {
+            color: #ef4444;
+            font-weight: 400;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            max-height: 200px;
+        }
+
+        .form-help {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
+        }
+
+        .submit-button:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 2px 6px rgba(156, 163, 175, 0.25);
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-link {
+            display: inline-block;
+            margin: 0 15px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            border: 1px solid #a7f3d0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .contact-info {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 25px;
+                margin: 15px;
+                max-width: 95%;
+            }
+
+            .title {
+                font-size: 2.1rem;
+                margin-bottom: 12px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .nav-link {
+                margin-right: 10px;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                align-items: flex-start;
+                padding-top: 5vh;
+            }
+
+            .container {
+                padding: 30px 20px;
+                margin: 0;
+                border-radius: 16px;
+            }
+
+            .title {
+                font-size: 1.9rem;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 12px 16px;
+            }
+
+            .submit-button {
+                padding: 14px 20px;
+                font-size: 1rem;
+            }
+
+            .navigation {
+                margin-bottom: 25px;
+            }
+
+            .nav-link {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .footer-links {
+                margin-top: 25px;
+            }
+
+            .footer-link {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 25px 18px;
+                border-radius: 14px;
+            }
+
+            .title {
+                font-size: 1.7rem;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .description {
+                font-size: 0.85rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 11px 14px;
+            }
+
+            .submit-button {
+                padding: 13px 18px;
+            }
+        }
+
+        /* Accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">← Inicio</a>
+            <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador Sencillo</a>
+            <a href="simulador-avanzado.html" class="nav-link secondary">📊 Simulador Avanzado</a>
+            <a href="privacidad.html" class="nav-link">🔒 Privacidad</a>
+        </nav>
+
+        <div class="header">
+            <h1 class="title">💬 Contacto</h1>
+            <h2 class="subtitle">¿Necesitas ayuda con tu hipoteca?</h2>
+            <p class="description">Estamos aquí para resolver todas tus dudas y ayudarte a tomar la mejor decisión financiera</p>
+        </div>
+
+        <div id="success-message" class="success-message">
+            <strong>¡Mensaje enviado correctamente!</strong><br>
+            Nos pondremos en contacto contigo lo antes posible.
+        </div>
+
+        <form name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+            <!-- Campo oculto para detectar bots -->
+            <input type="hidden" name="form-name" value="contacto" />
+            <div style="display: none;">
+                <label>No llenar este campo si eres humano: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre" class="form-label">
+                    Nombre completo <span class="required">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    class="form-input" 
+                    placeholder="Ej: Juan Pérez García" 
+                    required
+                    autocomplete="name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">
+                    Correo electrónico <span class="required">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="Ej: juan@ejemplo.com" 
+                    required
+                    autocomplete="email"
+                >
+                <div class="form-help">Te contactaremos a través de este email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono" class="form-label">
+                    Teléfono (opcional)
+                </label>
+                <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    class="form-input" 
+                    placeholder="Ej: 612 345 678"
+                    autocomplete="tel"
+                >
+                <div class="form-help">Por si prefieres que te llamemos</div>
+            </div>
+
+            <div class="form-group">
+                <label for="asunto" class="form-label">
+                    Asunto <span class="required">*</span>
+                </label>
+                <select id="asunto" name="asunto" class="form-input" required>
+                    <option value="">Selecciona un tema</option>
+                    <option value="duda-simulador">Duda sobre el simulador</option>
+                    <option value="consulta-hipoteca">Consulta sobre hipotecas</option>
+                    <option value="problema-tecnico">Problema técnico</option>
+                    <option value="sugerencia">Sugerencia de mejora</option>
+                    <option value="otro">Otro tema</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje" class="form-label">
+                    Mensaje <span class="required">*</span>
+                </label>
+                <textarea 
+                    id="mensaje" 
+                    name="mensaje" 
+                    class="form-textarea" 
+                    placeholder="Cuéntanos en qué podemos ayudarte. Incluye todos los detalles que consideres importantes..."
+                    required
+                    rows="5"
+                ></textarea>
+                <div class="form-help">Describe tu consulta con el máximo detalle posible</div>
+            </div>
+
+            <button type="submit" class="submit-button" id="submit-btn">
+                Enviar mensaje
+            </button>
+        </form>
+
+        <div class="contact-info">
+            <h3>📞 Información de contacto</h3>
+            <p>
+                <strong>Tiempo de respuesta:</strong> 24-48 horas<br>
+                <strong>Horario de atención:</strong> Lunes a Viernes, 9:00 - 18:00h<br>
+                <strong>Especialidad:</strong> Asesoramiento hipotecario personalizado
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Inicio</a>
+            <a href="privacidad.html" class="footer-link">Política de Privacidad</a>
+            <a href="terminos.html" class="footer-link">Términos de Uso</a>
+        </div>
+    </div>
+
+    <script>
+        // Manejo del formulario
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            
+            // Cambiar texto del botón durante el envío
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Simular envío (Netlify manejará el envío real)
+            setTimeout(() => {
+                // Mostrar mensaje de éxito
+                successMessage.classList.add('show');
+                
+                // Resetear formulario
+                document.getElementById('contact-form').reset();
+                
+                // Restaurar botón
+                submitBtn.textContent = 'Enviar mensaje';
+                submitBtn.disabled = false;
+                
+                // Scroll al mensaje de éxito
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 1000);
+        });
+
+        // Validación en tiempo real
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.style.borderColor = '#ef4444';
+                this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+            } else {
+                this.style.borderColor = '#e5e7eb';
+                this.style.boxShadow = 'none';
+            }
+        });
+
+        // Contador de caracteres para el mensaje
+        document.getElementById('mensaje').addEventListener('input', function() {
+            const maxLength = 1000;
+            const currentLength = this.value.length;
+            
+            if (currentLength > maxLength * 0.8) {
+                if (!document.querySelector('.char-counter')) {
+                    const counter = document.createElement('div');
+                    counter.className = 'char-counter form-help';
+                    counter.style.textAlign = 'right';
+                    counter.style.marginTop = '5px';
+                    this.parentNode.appendChild(counter);
+                }
+                
+                const counter = document.querySelector('.char-counter');
+                counter.textContent = `${currentLength}/${maxLength} caracteres`;
+                
+                if (currentLength > maxLength) {
+                    counter.style.color = '#ef4444';
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    counter.style.color = '#6b7280';
+                    this.style.borderColor = '#e5e7eb';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
