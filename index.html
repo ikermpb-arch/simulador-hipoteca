@@ -555,17 +555,29 @@
                 <span class="button-icon">📊</span>
                 <span class="button-title">Simulador Avanzado</span>
                 <span class="button-description">Análisis completo con tabla de amortización, gastos y escenarios detallados.</span>
-            </a>
-        </div>
-    </div>
-    <footer style="text-align:center; margin-top:2rem; font-size:0.9rem;">
-  <p><a href="privacidad.html">Política de Privacidad</a></p>
-</footer>
-<!-- Banner de Cookies RGPD -->
-<div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#f8f8f8; border-top:1px solid #ccc; padding:1rem; font-size:0.9rem; text-align:center; z-index:1000; display:none;">
+</div>
+
+<script>
+  function aceptarCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAceptadas', 'true');
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('cookiesAceptadas')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  };
+</script>
+<!-- Banner de Cookies RGPD + Footer fijo -->
+<div id="cookie-banner" style="position:fixed; bottom:3rem; left:0; right:0; background:#f8f8f8; border-top:1px solid #ccc; padding:1rem; font-size:0.9rem; text-align:center; z-index:1000; display:none;">
   <p>Este sitio utiliza cookies para mejorar la experiencia del usuario. <a href="privacidad.html" style="color:#007BFF;">Más información</a></p>
   <button onclick="aceptarCookies()" style="margin-top:0.5rem; padding:0.4rem 1rem; background:#007BFF; color:white; border:none; border-radius:4px;">Aceptar</button>
 </div>
+
+<footer style="position:fixed; bottom:0; left:0; right:0; background:#f8f8f8; padding:0.5rem; font-size:0.8rem; text-align:center; border-top:1px solid #ccc; z-index:999;">
+  <p><a href="privacidad.html">Política de Privacidad</a></p>
+</footer>
 
 <script>
   function aceptarCookies() {
