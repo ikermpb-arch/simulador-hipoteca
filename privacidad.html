@@ -1,667 +1,100 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - Simulador de Hipotecas</title>
-    <meta name="description" content="Política de privacidad del Simulador de Hipotecas. Información sobre tratamiento de datos personales conforme al RGPD.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 60%, #ffffff 100%);
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 45px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: containerFadeIn 1s ease-out forwards;
-        }
-
-        @keyframes containerFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .navigation {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .nav-link {
-            display: inline-block;
-            margin-right: 15px;
-            margin-bottom: 8px;
-            padding: 8px 16px;
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(59, 130, 246, 0.2);
-            transform: translateY(-1px);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 15px;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: titleSlideUp 1s ease-out 0.3s forwards;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #64748b;
-            font-weight: 400;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: titleSlideUp 1s ease-out 0.5s forwards;
-        }
-
-        .last-updated {
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-style: italic;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: titleSlideUp 1s ease-out 0.7s forwards;
-        }
-
-        @keyframes titleSlideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .content {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: contentSlideUp 1s ease-out 0.9s forwards;
-        }
-
-        @keyframes contentSlideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            margin-bottom: 35px;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 18px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e5e7eb;
-            position: relative;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-
-        .section-content {
-            color: #374151;
-            font-size: 1rem;
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        .section-content p {
-            margin-bottom: 16px;
-        }
-
-        .section-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .highlight-box {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-left: 4px solid #3b82f6;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 25px 0;
-        }
-
-        .highlight-box h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e40af;
-            margin-bottom: 12px;
-        }
-
-        .highlight-box p {
-            color: #1e40af;
-            margin-bottom: 8px;
-        }
-
-        .highlight-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .data-list {
-            background: #fafafa;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .data-list h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 12px;
-        }
-
-        .data-list ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .data-list li {
-            padding: 6px 0;
-            color: #4b5563;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .data-list li::before {
-            content: '•';
-            color: #3b82f6;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .contact-info {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .contact-info h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 15px;
-        }
-
-        .contact-info p {
-            color: #4b5563;
-            margin-bottom: 15px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-        }
-
-        .footer-links {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .footer-link {
-            display: inline-block;
-            margin: 0 20px 10px;
-            color: #6b7280;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: #3b82f6;
-            text-decoration: underline;
-        }
-
-        .warning-box {
-            background: #fef3c7;
-            border: 1px solid #f59e0b;
-            border-left: 4px solid #f59e0b;
-            border-radius: 8px;
-            padding: 18px;
-            margin: 25px 0;
-        }
-
-        .warning-box h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #92400e;
-            margin-bottom: 8px;
-        }
-
-        .warning-box p {
-            color: #92400e;
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 35px 25px;
-                margin: 15px;
-                max-width: 95%;
-            }
-
-            .title {
-                font-size: 2.1rem;
-                margin-bottom: 12px;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-
-            .section-title {
-                font-size: 1.25rem;
-                margin-bottom: 15px;
-            }
-
-            .section-content {
-                font-size: 0.95rem;
-                text-align: left;
-            }
-
-            .highlight-box,
-            .data-list,
-            .contact-info,
-            .warning-box {
-                padding: 15px;
-                margin: 20px 0;
-            }
-
-            .nav-link {
-                margin-right: 10px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-            }
-
-            .container {
-                padding: 25px 20px;
-                margin: 0;
-                border-radius: 16px;
-            }
-
-            .title {
-                font-size: 1.8rem;
-                margin-bottom: 10px;
-            }
-
-            .subtitle {
-                font-size: 0.95rem;
-                margin-bottom: 6px;
-            }
-
-            .last-updated {
-                font-size: 0.85rem;
-            }
-
-            .section {
-                margin-bottom: 30px;
-            }
-
-            .section-title {
-                font-size: 1.15rem;
-                margin-bottom: 12px;
-            }
-
-            .section-content {
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
-
-            .nav-link {
-                display: block;
-                margin-right: 0;
-                margin-bottom: 8px;
-                text-align: center;
-            }
-
-            .footer-link {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .contact-btn {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            .title {
-                font-size: 1.6rem;
-            }
-
-            .subtitle {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.1rem;
-            }
-
-            .section-content {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Accesibilidad */
-        @media (prefers-reduced-motion: reduce) {
-            *, ::before, ::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Scroll suave para enlaces internos */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Estilo para enlaces internos */
-        .internal-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .internal-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="navigation">
-            <a href="index.html" class="nav-link">← Inicio</a>
-            <a href="contacto.html" class="nav-link">💬 Contacto</a>
-            <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador Sencillo</a>
-            <a href="simulador-avanzado.html" class="nav-link">📊 Simulador Avanzado</a>
-        </nav>
-
-        <div class="header">
-            <h1 class="title">🔒 Política de Privacidad</h1>
-            <p class="subtitle">Protección de datos conforme al Reglamento General de Protección de Datos (RGPD)</p>
-            <p class="last-updated">Última actualización: 24 de septiembre de 2025</p>
-        </div>
-
-        <div class="content">
-            <div class="highlight-box">
-                <h4>🛡️ Tu privacidad es nuestra prioridad</h4>
-                <p>En el Simulador de Hipotecas respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política te explica de forma clara y transparente cómo tratamos tu información.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">1. Responsable del tratamiento</h2>
-                <div class="section-content">
-                    <p><strong>Responsable:</strong> Simulador de Hipotecas</p>
-                    <p><strong>Finalidad del sitio web:</strong> Ofrecer herramientas gratuitas de simulación hipotecaria y asesoramiento personalizado.</p>
-                    <p><strong>Contacto para datos:</strong> Puedes contactarnos a través de nuestro <a href="contacto.html" class="internal-link">formulario de contacto</a> para cualquier consulta relacionada con tus datos personales.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">2. Datos que recopilamos</h2>
-                <div class="section-content">
-                    <p><strong>Principio fundamental:</strong> No recopilamos datos personales sin tu consentimiento explícito.</p>
-                    
-                    <div class="data-list">
-                        <h4>Datos recopilados únicamente a través del formulario de contacto (opcional):</h4>
-                        <ul>
-                            <li>Nombre completo</li>
-                            <li>Dirección de correo electrónico</li>
-                            <li>Teléfono (campo opcional)</li>
-                            <li>Asunto de la consulta</li>
-                            <li>Mensaje o consulta</li>
-                        </ul>
-                    </div>
-
-                    <div class="warning-box">
-                        <h4>⚠️ Importante</h4>
-                        <p>Los simuladores de hipotecas funcionan completamente en tu navegador. Los cálculos se realizan localmente y no enviamos ni almacenamos los datos que introduces en los simuladores.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">3. Base legal y finalidad</h2>
-                <div class="section-content">
-                    <p><strong>Base legal:</strong> Consentimiento del interesado (Art. 6.1.a RGPD)</p>
-                    <p><strong>Finalidad:</strong> Los datos del formulario de contacto se utilizan exclusivamente para:</p>
-                    
-                    <div class="data-list">
-                        <ul>
-                            <li>Responder a tu consulta específica</li>
-                            <li>Proporcionarte asesoramiento personalizado sobre hipotecas</li>
-                            <li>Mantener un registro de la conversación para mejor servicio</li>
-                        </ul>
-                    </div>
-
-                    <p><strong>No utilizamos tus datos para:</strong> Marketing automatizado, spam, venta a terceros o cualquier finalidad no relacionada con tu consulta original.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">4. Cookies y tecnologías de seguimiento</h2>
-                <div class="section-content">
-                    <p><strong>Política de cookies:</strong> Este sitio web no utiliza cookies de seguimiento, analytics externos ni herramientas de marketing digital.</p>
-                    
-                    <div class="highlight-box">
-                        <h4>🍪 ¿Qué significa esto para ti?</h4>
-                        <p>• No rastreamos tu comportamiento en el sitio web</p>
-                        <p>• No creamos perfiles de usuario</p>
-                        <p>• No compartimos datos con Google Analytics, Facebook o similares</p>
-                        <p>• Solo utilizamos cookies técnicas esenciales para el funcionamiento básico</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">5. Conservación de datos</h2>
-                <div class="section-content">
-                    <p><strong>Tiempo de conservación:</strong> Los datos del formulario de contacto se conservan durante un máximo de 2 años desde el último contacto, salvo que solicites su eliminación antes.</p>
-                    <p><strong>Criterios de conservación:</strong> Mantenemos los datos solo el tiempo necesario para proporcionarte el servicio solicitado y cumplir con nuestras obligaciones legales.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">6. Tus derechos bajo el RGPD</h2>
-                <div class="section-content">
-                    <p>Como usuario tienes pleno control sobre tus datos personales. Puedes ejercer los siguientes derechos:</p>
-                    
-                    <div class="data-list">
-                        <h4>Derechos disponibles:</h4>
-                        <ul>
-                            <li><strong>Acceso:</strong> Saber qué datos tenemos sobre ti</li>
-                            <li><strong>Rectificación:</strong> Corregir datos incorrectos o incompletos</li>
-                            <li><strong>Supresión:</strong> Solicitar la eliminación completa de tus datos</li>
-                            <li><strong>Portabilidad:</strong> Recibir tus datos en formato estructurado</li>
-                            <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
-                            <li><strong>Limitación:</strong> Restringir el procesamiento de tus datos</li>
-                        </ul>
-                    </div>
-
-                    <p><strong>¿Cómo ejercer tus derechos?</strong> Contacta con nosotros a través del <a href="contacto.html" class="internal-link">formulario de contacto</a> indicando claramente qué derecho deseas ejercer. Responderemos en un plazo máximo de 30 días.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">7. Seguridad de los datos</h2>
-                <div class="section-content">
-                    <p>Implementamos medidas técnicas y organizativas apropiadas para proteger tus datos personales:</p>
-                    
-                    <div class="data-list">
-                        <ul>
-                            <li>Cifrado de datos en tránsito (HTTPS)</li>
-                            <li>Acceso restringido a la información</li>
-                            <li>Servidores seguros y actualizados</li>
-                            <li>Copias de seguridad regulares</li>
-                            <li>Monitorización de seguridad continua</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">8. Transferencias internacionales</h2>
-                <div class="section-content">
-                    <p><strong>Política de transferencias:</strong> Tus datos personales se procesan y almacenan dentro del Espacio Económico Europeo (EEE). No realizamos transferencias internacionales de datos a países terceros.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">9. Menores de edad</h2>
-                <div class="section-content">
-                    <p>Este servicio está dirigido a personas mayores de 18 años. No recopilamos conscientemente datos personales de menores de edad. Si detectamos información de un menor, procederemos a su eliminación inmediata.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">10. Cambios en esta política</h2>
-                <div class="section-content">
-                    <p>Nos reservamos el derecho de actualizar esta política de privacidad. Los cambios significativos serán comunicados a través del sitio web con al menos 30 días de antelación.</p>
-                    <p><strong>Versión actual:</strong> 1.0 - Septiembre 2025</p>
-                </div>
-            </div>
-
-            <div class="contact-info">
-                <h3>📧 ¿Tienes dudas sobre tu privacidad?</h3>
-                <p>Si tienes preguntas sobre esta política de privacidad o quieres ejercer alguno de tus derechos, no dudes en contactarnos.</p>
-                <a href="contacto.html" class="contact-btn">Contactar sobre privacidad</a>
-            </div>
-
-            <div class="highlight-box">
-                <h4>🏛️ Autoridad de Control</h4>
-                <p>Si consideras que el tratamiento de tus datos no es conforme a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) - <strong>www.aepd.es</strong></p>
-            </div>
-        </div>
-
-        <div class="footer-links">
-            <a href="index.html" class="footer-link">🏠 Inicio</a>
-            <a href="contacto.html" class="footer-link">💬 Contacto</a>
-            <a href="gracias.html" class="footer-link">✅ Mensaje enviado</a>
-        </div>
-    </div>
-
-    <script>
-        // Añadir funcionalidad de smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Destacar el enlace de navegación actual
-        const currentPage = window.location.pathname.split('/').pop();
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
-                link.style.fontWeight = '600';
-            }
-        });
-
-        // Añadir indicador de lectura
-        let readingProgress = document.createElement('div');
-        readingProgress.style.position = 'fixed';
-        readingProgress.style.top = '0';
-        readingProgress.style.left = '0';
-        readingProgress.style.width = '0%';
-        readingProgress.style.height = '3px';
-        readingProgress.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
-        readingProgress.style.zIndex = '9999';
-        readingProgress.style.transition = 'width 0.1s ease';
-        document.body.appendChild(readingProgress);
-
-        window.addEventListener('scroll', () => {
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            readingProgress.style.width = scrollPercent + '%';
-        });
-    </script>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Política de Privacidad y Cookies | CalculaTuHipoteca&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Consulta nuestra política de privacidad y cookies adaptada al RGPD. Transparencia sobre el uso de datos y tecnologías publicitarias."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1, h2 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #af4261;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ul {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>a {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #af4261;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: underline;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Política de Privacidad y Cookies&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;1. Responsable del sitio web&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Este sitio web (&lt;strong&gt;calculatuhipoteca.org&lt;/strong&gt;) es gestionado por un particular con fines informativos y sin ánimo de lucro. No se recogen datos personales identificables de forma directa ni se almacenan en bases de datos propias.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;2. Finalidad del sitio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;El objetivo de esta herramienta es permitir a los usuarios calcular su hipoteca de forma sencilla o avanzada, sin necesidad de registrarse ni compartir información personal.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;3. Datos que se recopilan&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Este sitio no solicita datos personales ni utiliza formularios que almacenen información en servidores. Sin embargo, al integrar servicios de terceros como &lt;strong&gt;Google AdSense&lt;/strong&gt;, pueden recopilarse ciertos datos de forma automática:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Dirección IP&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Tipo de dispositivo y navegador&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Ubicación aproximada&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Comportamiento de navegación (páginas visitadas, clics en anuncios)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;4. Cookies y tecnologías de seguimiento&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Este sitio utiliza:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Cookies técnicas esenciales para el correcto funcionamiento del simulador&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Cookies de terceros gestionadas por Google AdSense, que pueden utilizarse para mostrar anuncios personalizados y medir su rendimiento&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h3&gt;¿Qué significa esto para ti?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Google puede mostrarte anuncios basados en tus intereses&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Se pueden utilizar tecnologías de seguimiento para mejorar la relevancia publicitaria&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;No se comparten datos personales directamente desde este sitio&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Consulta la política de privacidad de Google aquí: <span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://policies.google.com/technologies/ads" target="_blank"&gt;https://policies.google.com/technologies/ads&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;5. Consentimiento y control&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Al continuar navegando por este sitio, aceptas el uso de cookies descrito anteriormente. Si lo deseas, puedes configurar tu navegador para bloquear cookies o eliminar las existentes.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;6. Derechos del usuario&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Según el Reglamento General de Protección de Datos (RGPD), tienes derecho a:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Acceder a tus datos personales&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Rectificarlos o eliminarlos&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Limitar su tratamiento&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;li&gt;Oponerte al uso de tecnologías de seguimiento&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Para ejercer estos derechos, puedes contactar directamente con Google como responsable del tratamiento de datos publicitarios.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;7. Cambios en esta política&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Esta política puede actualizarse en cualquier momento para reflejar cambios técnicos, legales o funcionales. Última actualización: &lt;strong&gt;24 de septiembre de 2025&lt;/strong&gt;.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
