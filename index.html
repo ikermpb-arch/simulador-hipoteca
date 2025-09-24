@@ -558,32 +558,5 @@
 </div>
 </script>
 
-<!-- Footer fijo con enlace legal -->
-<footer style="position:fixed; bottom:0; left:0; right:0; background:transparent; padding:0.5rem; font-size:0.8rem; text-align:center; z-index:999;">
-  <p><a href="privacidad.html" style="color:#007BFF;">Política de Privacidad</a></p>
-</footer>
-
-<script>
-  function aceptarCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem('cookiesPreferencias', 'aceptadas');
-  }
-
-  function rechazarCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem('cookiesPreferencias', 'rechazadas');
-  }
-
-  function configurarCookies() {
-    alert('Aquí iría una ventana para configurar cookies específicas (funcionales, analíticas, etc). Podemos desarrollarla si lo deseas.');
-  }
-
-  window.onload = function() {
-    if (!localStorage.getItem('cookiesPreferencias')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  };
-</script>
-
 </body>
 </html>
