@@ -343,6 +343,106 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
+        .blog-categories {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .categories-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .category-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .blog-search {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .search-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-button:hover {
+            background: #1d4ed8;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -383,6 +483,25 @@
                 margin-right: 10px;
                 font-size: 0.85rem;
             }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .blog-categories {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .categories-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .category-card {
+                padding: 15px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -415,9 +534,35 @@
             <a href="index.html" class="nav-link">← Inicio</a>
             <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador Sencillo</a>
             <a href="simulador-avanzado.html" class="nav-link">📊 Simulador Avanzado</a>
-            <a href="contacto.html" class="nav-link">💬 Contacto</a>
-            <a href="privacidad.html" class="nav-link">🔒 Privacidad</a>
+            <a href="contacto-page.html" class="nav-link">💬 Contacto</a>
+            <a href="privacidad-page.html" class="nav-link">🔒 Privacidad</a>
         </nav>
+
+        <div class="blog-categories">
+            <h3 class="categories-title">🏷️ Explora por categorías</h3>
+            <div class="categories-grid">
+                <a href="blog/categorias/guias.html" class="category-card">
+                    <div class="category-icon">📚</div>
+                    <h4>Guías Completas</h4>
+                    <p>Paso a paso para tu hipoteca</p>
+                </a>
+                <a href="blog/categorias/analisis.html" class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h4>Análisis de Mercado</h4>
+                    <p>Euríbor y tendencias actuales</p>
+                </a>
+                <a href="blog/categorias/comparativas.html" class="category-card">
+                    <div class="category-icon">⚖️</div>
+                    <h4>Comparativas</h4>
+                    <p>Fija vs variable, bancos</p>
+                </a>
+                <a href="blog/categorias/jovenes.html" class="category-card">
+                    <div class="category-icon">🎓</div>
+                    <h4>Para Jóvenes</h4>
+                    <p>Ayudas y requisitos especiales</p>
+                </a>
+            </div>
+        </div>
 
         <div class="header">
             <h1 class="title">📝 Blog de Hipotecas</h1>
@@ -428,6 +573,13 @@
             </p>
         </div>
 
+        <div class="blog-search">
+            <form class="search-form" action="#" method="get">
+                <input type="text" class="search-input" placeholder="Buscar en el blog... (ej: primera hipoteca, euríbor)" name="search">
+                <button type="submit" class="search-button">🔍 Buscar</button>
+            </form>
+        </div>
+
         <!-- Post Destacado -->
         <article class="featured-post">
             <span class="featured-badge">Destacado</span>
@@ -436,7 +588,7 @@
                 <span class="post-date">📅 Septiembre 2025</span>
             </div>
             <h2 class="post-title">
-                <a href="post-guia-completa-primera-hipoteca.html">
+                <a href="blog/posts/guia-primera-hipoteca.html">
                     Guía Completa para tu Primera Hipoteca en 2025: Todo lo que Necesitas Saber
                 </a>
             </h2>
@@ -450,7 +602,7 @@
                 <span class="tag">Consejos</span>
                 <span class="tag">2025</span>
             </div>
-            <a href="post-guia-completa-primera-hipoteca.html" class="read-more">Leer artículo completo →</a>
+            <a href="blog/posts/guia-primera-hipoteca.html" class="read-more">Leer artículo completo →</a>
         </article>
 
         <!-- Grid de Posts -->
