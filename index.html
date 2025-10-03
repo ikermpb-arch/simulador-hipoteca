@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Hipotecas - Calcula tu Cuota Ideal</title>
+    <meta name="description" content="Calcula tu hipoteca de forma sencilla o avanzada. Obtén tu cuota mensual, tabla de amortización y todos los costos asociados.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Elementos decorativos flotantes */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30%;
+            animation: float2 8s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(15px) rotate(-180deg); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 60px 50px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            max-width: 650px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.4s forwards;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #4a5568;
+            font-weight: 400;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.6s forwards;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #718096;
+            font-weight: 300;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideUp 1s ease-out 0.8s forwards;
+        }
+
+        @keyframes titleSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .simulator-button {
+            flex: 1;
+            max-width: 280px;
+            padding: 30px 25px;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            opacity: 0;
+            transform: translateY(30px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .simulator-button:nth-child(1) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            animation: buttonSlideUp 1s ease-out 1s forwards;
+        }
+
+        .simulator-button:nth-child(2) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            animation: buttonSlideUp 1s ease-out 1.2s forwards;
+        }
+
+        @keyframes buttonSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .simulator-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .simulator-button:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .simulator-button:hover::before {
+            left: 100%;
+        }
+
+        .simulator-button:active {
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        .button-icon {
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 18px;
+            opacity: 0.95;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .button-title {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .button-description {
+            display: block;
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        /* Elementos decorativos adicionales */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .shape1 {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 15%;
+            animation: floatShape 12s infinite ease-in-out;
+        }
+
+        .shape2 {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 20%;
+            animation: floatShape 15s infinite ease-in-out reverse;
+        }
+
+        .shape3 {
+            width: 80px;
+            height: 80px;
+            bottom: 25%;
+            left: 20%;
+            animation: floatShape 18s infinite ease-in-out;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        /* Media Queries Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 45px 30px;
+                margin: 15px;
+                max-width: 95%;
+            }
+
+            .title {
+                font-size: 2.6rem;
+                margin-bottom: 16px;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .buttons-container {
+                gap: 25px;
+                margin-top: 35px;
+            }
+
+            .simulator-button {
+                padding: 25px 20px;
+                max-width: none;
+            }
+
+            .button-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            .button-title {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .button-description {
+                font-size: 0.95rem;
+            }
+
+            /* Responsive para espacios publicitarios */
+            .ad-space {
+                margin: 30px 0;
+            }
+
+            .ad-content {
+                padding: 20px;
+            }
+
+            .ad-content-horizontal {
+                padding: 18px 20px;
+            }
+
+            .ad-icon {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+            }
+
+            .ad-title {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .ad-description {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+
+            .ad-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                align-items: flex-start;
+                padding-top: 8vh;
+            }
+
+            .container {
+                padding: 35px 25px;
+                margin: 0;
+                border-radius: 20px;
+            }
+
+            .title {
+                font-size: 2.2rem;
+                margin-bottom: 14px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .description {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: stretch;
+                margin-top: 30px;
+            }
+
+            .simulator-button {
+                width: 100%;
+                max-width: none;
+                padding: 22px 18px;
+                border-radius: 16px;
+            }
+
+            .button-icon {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+            }
+
+            .button-title {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .button-description {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+
+            .title {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .description {
+                font-size: 0.85rem;
+            }
+
+            .buttons-container {
+                gap: 18px;
+                margin-top: 25px;
+            }
+
+            .simulator-button {
+                padding: 20px 16px;
+                border-radius: 14px;
+            }
+
+            .button-icon {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .button-title {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .button-description {
+                font-size: 0.85rem;
+            }
+
+            /* Responsive para espacios publicitarios móvil pequeño */
+            .ad-content {
+                padding: 15px;
+            }
+
+            .ad-content-horizontal {
+                padding: 15px;
+            }
+
+            .ad-title {
+                font-size: 1rem;
+            }
+
+            .ad-description {
+                font-size: 0.85rem;
+            }
+
+            .ad-button {
+                font-size: 0.85rem;
+                padding: 10px 16px;
+            }
+
+            .blog-cta-content {
+                padding: 30px 25px;
+            }
+
+            .blog-icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+
+            .blog-cta-title {
+                font-size: 1.7rem;
+                margin-bottom: 12px;
+            }
+
+            .blog-cta-text {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .blog-highlights {
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .blog-highlight {
+                font-size: 0.9rem;
+            }
+
+            .blog-button {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Animaciones adicionales para interactividad */
+        .container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Modo oscuro opcional */
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(30, 30, 40, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .title {
+                color: #f7fafc;
+            }
+            
+            .subtitle {
+                color: #e2e8f0;
+            }
+            
+            .description {
+                color: #cbd5e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Simulador de Hipotecas</h1>
+            <h2 class="subtitle">Elige cómo quieres calcular tu hipoteca</h2>
+            <p class="description">Herramientas profesionales para tomar la mejor decisión financiera</p>
+        </div>
+
+        <div class="buttons-container">
+            <a href="simulador-sencillo.html" class="simulator-button">
+                <span class="button-icon">🏡</span>
+                <span class="button-title">Simulador Sencillo</span>
+                <span class="button-description">Calcula tu cuota mensual en segundos. Perfecto para una estimación rápida y sin complicaciones.</span>
+            </a>
+
+            <a href="simulador-avanzado.html" class="simulator-button">
+                <span class="button-icon">📊</span>
+                <span class="button-title">Simulador Avanzado</span>
+                <span class="button-description">Análisis completo con tabla de amortización, gastos y escenarios detallados.</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
