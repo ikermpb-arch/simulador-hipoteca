@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías Completas sobre Hipotecas - Blog Simulador de Hipotecas</title>
+    <meta name="description" content="Guías paso a paso sobre hipotecas: primera vivienda, subrogación, jóvenes, autónomos. Consejos expertos para conseguir tu financiación ideal.">
+    <meta name="keywords" content="guías hipotecas, primera hipoteca, subrogación, hipoteca jóvenes, guía paso a paso">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 60%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .navigation {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 6px;
+            padding: 6px 14px;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135f, #f0f9ff, #e0f2fe);
+            border-radius: 16px;
+            border: 1px solid #bae6fd;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .category-description {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .category-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .post-difficulty {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .post-reading-time {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .post-title a:hover {
+            color: #10b981;
+        }
+
+        .post-excerpt {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .post-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .topic {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #059669;
+            text-decoration: underline;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 20px;
+                margin: 15px;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+
+            .category-description {
+                font-size: 1rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .category-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+                margin: 10px;
+                border-radius: 16px;
+            }
+
+            .category-title {
+                font-size: 1.7rem;
+            }
+
+            .category-icon {
+                font-size: 3rem;
+            }
+
+            .nav-link {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">← Inicio</a>
+            <a href="blog.html" class="nav-link">📝 Blog</a>
+            <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador</a>
+            <a href="contacto.html" class="nav-link">💬 Contacto</a>
+        </nav>
+
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a> / <a href="blog.html">Blog</a> / <strong>Guías Completas</strong>
+        </div>
+
+        <div class="category-header">
+            <div class="category-icon">📚</div>
+            <h1 class="category-title">Guías Completas sobre Hipotecas</h1>
+            <p class="category-description">
+                Guías paso a paso para dominar cada aspecto de tu hipoteca. Desde la preparación 
+                inicial hasta la firma, todo el conocimiento que necesitas en un solo lugar.
+            </p>
+            <div class="category-stats">
+                <div class="stat-item">📝 <strong>7 artículos</strong></div>
+                <div class="stat-item">⏱️ <strong>~15 min lectura</strong></div>
+                <div class="stat-item">👁️ <strong>12.5K lecturas</strong></div>
+            </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="posts-grid">
+            <!-- Post 1 - Destacado -->
+            <article class="post-card">
+                <span class="featured-badge">Destacado</span>
+                <div class="post-meta">
+                    <span class="post-difficulty">Principiante</span>
+                    <span class="post-reading-time">⏱️ 15 min</span>
+                    <span>📅 Sep 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-guia-completa-primera-hipoteca.html">
+                        Guía Completa para tu Primera Hipoteca en 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Todo lo que necesitas saber para conseguir tu primera hipoteca. Desde la documentación 
+                    hasta la firma, una guía paso a paso con consejos de expertos.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Preparación</span>
+                    <span class="topic">Documentos</span>
+                    <span class="topic">Negociación</span>
+                    <span class="topic">Primera vivienda</span>
+                </div>
+                <a href="post-guia-completa-primera-hipoteca.html" class="read-more">Leer guía completa →</a>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Intermedio</span>
+                    <span class="post-reading-time">⏱️ 12 min</span>
+                    <span>📅 Sep 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-subrogacion-hipoteca-2025.html">
+                        Guía Completa de Subrogación Hipotecaria 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Aprende cuándo y cómo cambiar tu hipoteca de banco. Requisitos, proceso completo, 
+                    costes y simulador para calcular si te conviene.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Subrogación</span>
+                    <span class="topic">Cambio banco</span>
+                    <span class="topic">Ahorro</span>
+                    <span class="topic">Proceso</span>
+                </div>
+                <a href="post-subrogacion-hipoteca-2025.html" class="read-more">Leer guía →</a>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Principiante</span>
+                    <span class="post-reading-time">⏱️ 10 min</span>
+                    <span>📅 Sep 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-hipotecas-jovenes-2025.html">
+                        Hipotecas para Jóvenes 2025: Guía de Ayudas y Ventajas
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Todas las ayudas disponibles para jóvenes compradores. Hipotecas al 100%, avales ICO, 
+                    condiciones especiales y requisitos actualizados.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Jóvenes</span>
+                    <span class="topic">Ayudas</span>
+                    <span class="topic">100%</span>
+                    <span class="topic">ICO</span>
+                </div>
+                <a href="post-hipotecas-jovenes-2025.html" class="read-more">Leer guía →</a>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Avanzado</span>
+                    <span class="post-reading-time">⏱️ 14 min</span>
+                    <span>📅 Oct 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-hipoteca-autonomos-2025.html">
+                        Hipoteca para Autónomos: Guía Completa 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Requisitos específicos, documentación adicional y estrategias para conseguir hipoteca 
+                    siendo autónomo o freelance. Consejos de negociación.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Autónomos</span>
+                    <span class="topic">Freelance</span>
+                    <span class="topic">Requisitos</span>
+                    <span class="topic">Documentación</span>
+                </div>
+                <a href="post-hipoteca-autonomos-2025.html" class="read-more">Leer guía →</a>
+            </article>
+
+            <!-- Post 5 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Intermedio</span>
+                    <span class="post-reading-time">⏱️ 11 min</span>
+                    <span>📅 Oct 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-hipoteca-contrato-temporal.html">
+                        Hipoteca con Contrato Temporal: Guía Práctica 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    ¿Es posible conseguir hipoteca con contrato temporal? Requisitos, alternativas, 
+                    bancos que la conceden y estrategias para mejorar tu solicitud.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Temporal</span>
+                    <span class="topic">Requisitos</span>
+                    <span class="topic">Alternativas</span>
+                    <span class="topic">Estrategias</span>
+                </div>
+                <a href="post-hipoteca-contrato-temporal.html" class="read-more">Leer guía →</a>
+            </article>
+
+            <!-- Post 6 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Principiante</span>
+                    <span class="post-reading-time">⏱️ 13 min</span>
+                    <span>📅 Oct 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-hipotecas-verdes-2025.html">
+                        Hipotecas Verdes 2025: Ventajas y Requisitos
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Todo sobre las hipotecas sostenibles: mejores tipos de interés, certificación energética 
+                    necesaria, bancos que las ofrecen y cuánto puedes ahorrar.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Sostenible</span>
+                    <span class="topic">Verde</span>
+                    <span class="topic">Eficiencia</span>
+                    <span class="topic">Ahorro</span>
+                </div>
+                <a href="post-hipotecas-verdes-2025.html" class="read-more">Leer guía →</a>
+            </article>
+
+            <!-- Post 7 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-difficulty">Avanzado</span>
+                    <span class="post-reading-time">⏱️ 16 min</span>
+                    <span>📅 Nov 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="post-segunda-vivienda-2025.html">
+                        Hipoteca Segunda Vivienda: Guía Fiscal y Financiera 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Diferencias con la primera vivienda, requisitos bancarios, implicaciones fiscales, 
+                    financiación y estrategias de inversión inmobiliaria.
+                </p>
+                <div class="post-topics">
+                    <span class="topic">Segunda vivienda</span>
+                    <span class="topic">Inversión</span>
+                    <span class="topic">Fiscal</span>
+                    <span class="topic">Requisitos</span>
+                </div>
+                <a href="post-segunda-vivienda-2025.html" class="read-more">Leer guía →</a>
+            </article>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3 class="cta-title">🧮 Calcula tu Hipoteca Ahora</h3>
+            <p class="cta-text">
+                Usa nuestros simuladores para calcular tu cuota mensual, ver tablas de amortización 
+                y comparar diferentes escenarios
+            </p>
+            <a href="simulador-sencillo.html" class="cta-button">Ir al Simulador</a>
+        </div>
+
+        <!-- Navigation to other categories -->
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e5e7eb;">
+            <h3 style="text-align: center; font-size: 1.5rem; color: #1e293b; margin-bottom: 25px;">
+                📂 Explora otras categorías
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <a href="blog-categoria-analisis.html" style="background: #f8fafc; padding: 20px; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📊</div>
+                    <h4 style="color: #1e293b; margin-bottom: 5px;">Análisis de Mercado</h4>
+                    <p style="color: #6b7280; font-size: 0.9rem; margin: 0;">Euríbor y tendencias</p>
+                </a>
+                <a href="blog-categoria-comparativas.html" style="background: #f8fafc; padding: 20px; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">⚖️</div>
+                    <h4 style="color: #1e293b; margin-bottom: 5px;">Comparativas</h4>
+                    <p style="color: #6b7280; font-size: 0.9rem; margin: 0;">Fija vs variable, bancos</p>
+                </a>
+                <a href="blog.html" style="background: #f8fafc; padding: 20px; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🏠</div>
+                    <h4 style="color: #1e293b; margin-bottom: 5px;">Ver Todo</h4>
+                    <p style="color: #6b7280; font-size: 0.9rem; margin: 0;">Todos los artículos</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
