@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Hipotecas - Guías y Consejos | Simulador de Hipotecas</title>
+    <meta name="description" content="Descubre guías completas sobre hipotecas, consejos de expertos y análisis del mercado inmobiliario.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30%;
+            animation: float2 8s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(15px) rotate(-180deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.3s forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.5s forwards;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 400;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .blog-search {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(102, 126, 234, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out 0.7s forwards;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s ease-out forwards;
+        }
+
+        .post-card:nth-child(1) { animation-delay: 0.9s; }
+        .post-card:nth-child(2) { animation-delay: 1s; }
+        .post-card:nth-child(3) { animation-delay: 1.1s; }
+        .post-card:nth-child(4) { animation-delay: 1.2s; }
+        .post-card:nth-child(5) { animation-delay: 1.3s; }
+        .post-card:nth-child(6) { animation-delay: 1.4s; }
+        .post-card:nth-child(7) { animation-delay: 1.5s; }
+        .post-card:nth-child(8) { animation-delay: 1.6s; }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .post-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .post-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .post-category {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .post-date {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .post-title a:hover {
+            color: #667eea;
+        }
+
+        .post-excerpt {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+            gap: 10px;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .home-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 25px 15px;
+            }
+
+            .container {
+                padding: 35px 25px;
+                border-radius: 20px;
+            }
+
+            .title {
+                font-size: 2.3rem;
+            }
+
+            .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .post-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .post-card {
+                padding: 25px;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 8px 14px;
+                margin-right: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .blog-search {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .post-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .post-title {
+                font-size: 1.25rem;
+            }
+
+            .post-excerpt {
+                font-size: 0.95rem;
+            }
+
+            .nav-link {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+
+            .home-button {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">← Inicio</a>
+            <a href="simulador-sencillo.html" class="nav-link">🏡 Simulador Sencillo</a>
+            <a href="simulador-avanzado.html" class="nav-link">📊 Simulador Avanzado</a>
+            <a href="contacto-page.html" class="nav-link">💬 Contacto</a>
+        </nav>
+
+        <div class="header">
+            <h1 class="title">📝 Blog de Hipotecas</h1>
+            <p class="subtitle">Guías expertas para tu financiación ideal</p>
+            <p class="description">
+                Descubre consejos profesionales, análisis del mercado y estrategias para conseguir 
+                la mejor hipoteca. Información actualizada y práctica para tu decisión más importante.
+            </p>
+        </div>
+
+        <div class="blog-search">
+            <form class="search-form" action="#" method="get">
+                <input type="text" class="search-input" placeholder="Buscar artículos... (ej: primera hipoteca, euríbor, tipos de interés)" name="search">
+                <button type="submit" class="search-button">🔍 Buscar</button>
+            </form>
+        </div>
+
+        <div class="post-grid">
+            <article class="post-card">
+                <span class="featured-badge">✨ Destacado</span>
+                <div class="post-meta">
+                    <span class="post-category">Guía Completa</span>
+                    <span class="post-date">📅 Octubre 2025</span>
+                </div>
+                <h2 class="post-title">
+                    <a href="blog/guia-primera-hipoteca.html">
+                        Guía Completa para tu Primera Hipoteca en 2025
+                    </a>
+                </h2>
+                <p class="post-excerpt">
+                    Una guía paso a paso para conseguir tu primera hipoteca. Desde la preparación de documentos 
+                    hasta la firma, descubre todos los secretos para obtener las mejores condiciones.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Primera hipoteca</span>
+                    <span class="tag">Documentación</span>
+                    <span class="tag">Consejos</span>
+                </div>
+                <a href="blog/guia-primera-hipoteca.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Análisis</span>
+                    <span class="post-date">📅 5 Oct 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/euribor-octubre-2025.html">
+                        Euríbor Octubre 2025: Análisis y Previsiones
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    El Euríbor continúa su tendencia bajista. Analizamos el impacto en hipotecas 
+                    variables y las previsiones para los próximos meses del año.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Euríbor</span>
+                    <span class="tag">Octubre 2025</span>
+                    <span class="tag">Variable</span>
+                </div>
+                <a href="blog/euribor-octubre-2025.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Comparativa</span>
+                    <span class="post-date">📅 2 Oct 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/hipoteca-fija-vs-variable.html">
+                        Hipoteca Fija vs Variable en 2025: ¿Cuál Elegir?
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Comparamos las ventajas y desventajas de cada tipo de hipoteca en el contexto actual. 
+                    Incluye calculadora para determinar tu mejor opción según tu perfil.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Fijo vs Variable</span>
+                    <span class="tag">Comparativa</span>
+                    <span class="tag">Decisión</span>
+                </div>
+                <a href="blog/hipoteca-fija-vs-variable.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Estrategias</span>
+                    <span class="post-date">📅 28 Sep 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/conseguir-mejor-tipo-interes.html">
+                        7 Estrategias para Conseguir el Mejor Tipo de Interés
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Técnicas probadas para negociar con bancos y conseguir condiciones excepcionales. 
+                    Ahorra miles de euros en tu hipoteca con estos consejos de experto.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Negociación</span>
+                    <span class="tag">Ahorro</span>
+                    <span class="tag">Tips</span>
+                </div>
+                <a href="blog/conseguir-mejor-tipo-interes.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Subrogación</span>
+                    <span class="post-date">📅 25 Sep 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/subrogacion-hipoteca-2025.html">
+                        Subrogación de Hipoteca 2025: Cuándo y Cómo Cambiar
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Guía completa sobre subrogación hipotecaria. Calculamos si te conviene cambiar 
+                    de banco y te mostramos el proceso paso a paso sin complicaciones.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Subrogación</span>
+                    <span class="tag">Cambio de banco</span>
+                    <span class="tag">Proceso</span>
+                </div>
+                <a href="blog/subrogacion-hipoteca-2025.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Errores Comunes</span>
+                    <span class="post-date">📅 20 Sep 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/errores-comunes-hipoteca.html">
+                        10 Errores Fatales al Solicitar una Hipoteca
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Los errores más costosos que cometen los compradores y cómo evitarlos. 
+                    Lista de verificación incluida para no olvidar nada importante en tu proceso.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Errores</span>
+                    <span class="tag">Prevención</span>
+                    <span class="tag">Checklist</span>
+                </div>
+                <a href="blog/errores-comunes-hipoteca.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Jóvenes</span>
+                    <span class="post-date">📅 15 Sep 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/hipotecas-jovenes-2025.html">
+                        Hipotecas para Jóvenes 2025: Ayudas y Ventajas
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Descubre todas las ayudas disponibles para jóvenes compradores. 
+                    Hipotecas al 100%, avales públicos y condiciones especiales que debes conocer.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Jóvenes</span>
+                    <span class="tag">Ayudas</span>
+                    <span class="tag">100%</span>
+                </div>
+                <a href="blog/hipotecas-jovenes-2025.html" class="read-more">Leer artículo →</a>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-category">Gastos</span>
+                    <span class="post-date">📅 10 Sep 2025</span>
+                </div>
+                <h3 class="post-title">
+                    <a href="blog/gastos-compra-vivienda.html">
+                        Gastos de Compra de Vivienda: Guía Completa 2025
+                    </a>
+                </h3>
+                <p class="post-excerpt">
+                    Todo lo que necesitas pagar además del precio de la vivienda. Calculadora 
+                    incluida para saber exactamente cuánto dinero necesitas ahorrar.
+                </p>
+                <div class="post-tags">
+                    <span class="tag">Gastos</span>
+                    <span class="tag">Notaría</span>
+                    <span class="tag">Impuestos</span>
+                </div>
+                <a href="blog/gastos-compra-vivienda.html" class="read-more">Leer artículo →</a>
+            </article>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html" class="home-button">← Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+</html>
