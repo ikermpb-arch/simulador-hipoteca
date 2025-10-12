@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipoteca Fija vs Variable 2025: ¿Cuál Elegir? | Blog Hipotecas</title>
+    <meta name="description" content="Comparativa completa entre hipoteca fija y variable en 2025. Ventajas, desventajas y cómo elegir la mejor opción según tu perfil.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .article-content {
+            color: #374151;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 50px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 35px 0 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-card.fija {
+            border-color: #3b82f6;
+        }
+
+        .comparison-card.variable {
+            border-color: #10b981;
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: #6b7280;
+        }
+
+        .pros-cons {
+            margin: 20px 0;
+        }
+
+        .pros-cons h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pros h4 {
+            color: #10b981;
+        }
+
+        .cons h4 {
+            color: #ef4444;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pros-cons li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .scenario-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .scenario-box h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .calculator-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+
+        .calculator-box h3 {
+            font-size: 1.5rem;
+            color: #065f46;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .calc-example {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #10b981;
+        }
+
+        .decision-tree {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .decision-tree h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .decision-item {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .decision-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .decision-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .decision-answer {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 30px;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .back-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .comparison-card {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="../blog.html" class="nav-link">← Volver al Blog</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="category-badge">⚖️ Comparativa</span>
+                    <span class="article-date">📅 2 Octubre 2025</span>
+                </div>
+                <h1 class="article-title">Hipoteca Fija vs Variable en 2025: ¿Cuál Elegir?</h1>
+                <p class="article-intro">
+                    Una de las decisiones más importantes al contratar una hipoteca es elegir entre tipo fijo 
+                    o variable. En esta guía analizamos ambas opciones en profundidad para ayudarte a tomar 
+                    la decisión correcta según tu situación personal y objetivos financieros.
+                </p>
+            </header>
+
+            <div class="article-content">
+                <h2>¿En Qué Se Diferencian?</h2>
+                
+                <p>
+                    La diferencia fundamental está en <strong>cómo se calcula el tipo de interés</strong> 
+                    que pagas cada mes:
+                </p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card fija">
+                        <div class="card-header">
+                            <div class="card-icon">🔒</div>
+                            <h3 class="card-title">Hipoteca Fija</h3>
+                            <p class="card-subtitle">Tipo de interés constante</p>
+                        </div>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>Cuota siempre igual durante toda la vida del préstamo</li>
+                                <li>Planificación financiera perfecta</li>
+                                <li>Tranquilidad total sin sorpresas</li>
+                                <li>Inmune a subidas de tipos</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Tipo inicial generalmente más alto</li>
+                                <li>No te beneficias si bajan los tipos</li>
+                                <li>Comisiones de cancelación más elevadas</li>
+                                <li>Menos flexibilidad</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card variable">
+                        <div class="card-header">
+                            <div class="card-icon">📊</div>
+                            <h3 class="card-title">Hipoteca Variable</h3>
+                            <p class="card-subtitle">Euríbor + diferencial</p>
+                        </div>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>Tipo inicial más bajo</li>
+                                <li>Te beneficias si baja el Euríbor</li>
+                                <li>Más flexibilidad para cambios</li>
+                                <li>Comisiones más bajas</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Cuota puede variar cada revisión</li>
+                                <li>Incertidumbre en la planificación</li>
+                                <li>Riesgo de subidas de tipos</li>
+                                <li>Requiere más seguimiento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Comparación con Ejemplos Reales</h2>
+
+                <div class="calculator-box">
+                    <h3>💰 Hipoteca de 200.000€ a 25 años</h3>
+                    
+                    <div class="calc-example">
+                        <h4 style="color: #3b82f6; margin-bottom: 15px;">Opción 1: Tipo Fijo al 2.5%</h4>
+                        <div class="calc-row">
+                            <span>Cuota mensual:</span>
+                            <strong>897€</strong>
+                        </div>
+                        <div class="calc-row">
+                            <span>Total a pagar:</span>
+                            <strong>269.100€</strong>
+                        </div>
+                        <div class="calc-row">
+                            <span>Intereses totales:</span>
+                            <strong>69.100€</strong>
+                        </div>
+                    </div>
+
+                    <div class="calc-example">
+                        <h4 style="color: #10b981; margin-bottom: 15px;">Opción 2: Variable (Euríbor 2.85% + 0.99%)</h4>
+                        <div class="calc-row">
+                            <span>Cuota inicial:</span>
+                            <strong>916€</strong>
+                        </div>
+                        <div class="calc-row">
+                            <span>Si Euríbor baja a 2.0%:</span>
+                            <strong>836€ (-80€/mes)</strong>
+                        </div>
+                        <div class="calc-row">
+                            <span>Si Euríbor sube a 3.5%:</span>
+                            <strong>984€ (+68€/mes)</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>¿Cuál Es Mejor en 2025?</h2>
+
+                <p>
+                    No existe una respuesta universal. La mejor opción depende de tu situación personal, 
+                    tolerancia al riesgo y expectativas sobre la evolución de los tipos de interés.
+                </p>
+
+                <div class="decision-tree">
+                    <h3>🎯 Árbol de Decisión: ¿Qué Hipoteca Es Para Ti?</h3>
+                    
+                    <div class="decision-item">
+                        <div class="decision-question">¿Valoras más la estabilidad o el ahorro potencial?</div>
+                        <div class="decision-answer">
+                            <strong>Estabilidad:</strong> Hipoteca Fija<br>
+                            <strong>Ahorro potencial:</strong> Hipoteca Variable
+                        </div>
+                    </div>
+
+                    <div class="decision-item">
+                        <div class="decision-question">¿Tu presupuesto es ajustado?</div>
+                        <div class="decision-answer">
+                            <strong>Sí:</strong> Hipoteca Fija (evitas sorpresas)<br>
+                            <strong>No:</strong> Puedes asumir una Variable
+                        </div>
+                    </div>
+
+                    <div class="decision-item">
+                        <div class="decision-question">¿Crees que los tipos van a bajar?</div>
+                        <div class="decision-answer">
+                            <strong>Sí:</strong> Hipoteca Variable (te beneficiarás)<br>
+                            <strong>No/No estoy seguro:</strong> Hipoteca Fija
+                        </div>
+                    </div>
+
+                    <div class="decision-item">
+                        <div class="decision-question">¿Plazo de tu hipoteca?</div>
+                        <div class="decision-answer">
+                            <strong>Más de 20 años:</strong> Considera Fija o Mixta<br>
+                            <strong>Menos de 15 años:</strong> Variable puede ser buena opción
+                        </div>
+                    </div>
+                </div>
+
+                <h2>La Tercera Opción: Hipoteca Mixta</h2>
+
+                <p>
+                    Cada vez más popular, la <strong>hipoteca mixta</strong> combina lo mejor de ambos mundos:
+                </p>
+
+                <div class="scenario-box">
+                    <h4>🔄 ¿Cómo Funciona?</h4>
+                    <p>
+                        Los primeros años (generalmente 5, 10 o 15) pagas a tipo fijo, y el resto del plazo 
+                        a tipo variable. Por ejemplo: <strong>10 años fijo al 2.3% + resto variable 
+                        (Euríbor + 0.89%)</strong>.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <strong>Ventaja:</strong> Tienes estabilidad en los años de mayor esfuerzo económico 
+                        (inicio de la hipoteca, hijos pequeños, etc.) y flexibilidad cuando tu situación 
+                        mejora y puedes asumir más riesgo.
+                    </p>
+                </div>
+
+                <h2>Escenarios Recomendados</h2>
+
+                <h3>Elige Hipoteca Fija Si...</h3>
+                <ul>
+                    <li><strong>Es tu primera hipoteca</strong> y no tienes experiencia con variaciones</li>
+                    <li><strong>Tu presupuesto es ajustado</strong> y no puedes permitirte subidas de cuota</li>
+                    <li><strong>Valoras la tranquilidad</strong> por encima del ahorro potencial</li>
+                    <li><strong>Crees que los tipos subirán</strong> en los próximos años</li>
+                    <li><strong>El plazo es muy largo</strong> (más de 25 años)</li>
+                    <li><strong>Encuentras un tipo fijo muy competitivo</strong> (por debajo del 2.5%)</li>
+                </ul>
+
+                <h3>Elige Hipoteca Variable Si...</h3>
+                <ul>
+                    <li><strong>Tienes capacidad de ahorro</strong> y puedes asumir subidas de cuota</li>
+                    <li><strong>Sigues el mercado</strong> y entiendes la evolución de tipos</li>
+                    <li><strong>El plazo es más corto</strong> (15-20 años)</li>
+                    <li><strong>Crees que el Euríbor bajará</strong> en los próximos meses/años</li>
+                    <li><strong>Quieres flexibilidad</strong> para amortizar o cambiar condiciones</li>
+                    <li><strong>El diferencial es muy bajo</strong> (por debajo de 0.90%)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>⚠️ Importante: Haz Números Antes de Decidir</h4>
+                    <p>
+                        Calcula cuánto pagarías en diferentes escenarios antes de tomar la decisión. 
+                        Simula qué pasaría si el Euríbor sube 1%, 2% o baja 0.5%. ¿Podrías asumir 
+                        esas cuotas? Si la respuesta es no, la fija es tu opción.
+                    </p>
+                </div>
+
+                <h2>Errores Comunes a Evitar</h2>
+
+                <ol>
+                    <li>
+                        <strong>Elegir solo por el tipo inicial:</strong> Un 0.2% de diferencia puede 
+                        parecer poco, pero en 25 años supone miles de euros.
+                    </li>
+                    <li>
+                        <strong>No revisar las condiciones de cambio:</strong> Algunas fijas tienen 
+                        comisiones altísimas si quieres cancelar anticipadamente.
+                    </li>
+                    <li>
+                        <strong>Ignorar los productos vinculados:</strong> A veces la "mejor oferta" 
+                        requiere contratar seguros y productos que encarecen el total.
+                    </li>
+                    <li>
+                        <strong>No comparar ofertas:</strong> Las diferencias entre bancos pueden ser 
+                        brutales. Solicita al menos 3-4 ofertas.
+                    </li>
+                    <li>
+                        <strong>Dejarse llevar por las modas:</strong> Que "ahora todo el mundo" elija 
+                        fija o variable no significa que sea lo mejor para ti.
+                    </li>
+                </ol>
+
+                <div class="cta-section">
+                    <h3>🧮 Calcula Tu Mejor Opción</h3>
+                    <p>
+                        Usa nuestro simulador avanzado para comparar escenarios con hipoteca fija, 
+                        variable y mixta con tus datos reales.
+                    </p>
+                    <a href="../../simulador-avanzado.html" class="cta-button">
+                        Simular Escenarios →
+                    </a>
+                </div>
+
+                <h2>Conclusión Final</h2>
+
+                <p>
+                    En 2025, con el Euríbor en niveles medios y con expectativas de ligeras bajadas, 
+                    <strong>ambas opciones son válidas</strong>. La clave está en conocerte a ti mismo:
+                </p>
+
+                <ul>
+                    <li>Si eres conservador y buscas tranquilidad: <strong>Hipoteca Fija</strong></li>
+                    <li>Si eres más arriesgado y quieres aprovechar bajadas: <strong>Hipoteca Variable</strong></li>
+                    <li>Si quieres lo mejor de ambos mundos: <strong>Hipoteca Mixta</strong></li>
+                </ul>
+
+                <p>
+                    No existe una opción objetivamente mejor. La mejor hipoteca es aquella que <strong>te 
+                    permite dormir tranquilo</strong> mientras pagas tu vivienda. Y recuerda: siempre puedes 
+                    cambiar de tipo de interés mediante una subrogación si tu situación o el mercado cambian.
+                </p>
+            </div>
+        </article>
+
+        <div class="back-links">
+            <a href="../blog.html" class="back-link">← Volver al Blog</a>
+            <a href="../../index.html" class="back-link">Ir al Inicio →</a>
+        </div>
+    </div>
+</body>
+</html>hipoteca-fija-vs-variable.html
