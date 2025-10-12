@@ -656,7 +656,219 @@
                 </p>
             </div>
         </article>
+<!-- Botones de Compartir -->
+<div class="share-section">
+    <h3 class="share-title">💬 Comparte este artículo</h3>
+    <p class="share-subtitle">Ayuda a otros a encontrar esta información</p>
+    <div class="share-buttons">
+        <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp(event)">
+            <span class="share-icon">📱</span>
+            <span class="share-text">WhatsApp</span>
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareTwitter(event)">
+            <span class="share-icon">🐦</span>
+            <span class="share-text">Twitter</span>
+        </a>
+        <a href="#" class="share-btn linkedin" onclick="shareLinkedIn(event)">
+            <span class="share-icon">💼</span>
+            <span class="share-text">LinkedIn</span>
+        </a>
+        <a href="#" class="share-btn facebook" onclick="shareFacebook(event)">
+            <span class="share-icon">📘</span>
+            <span class="share-text">Facebook</span>
+        </a>
+        <a href="#" class="share-btn email" onclick="shareEmail(event)">
+            <span class="share-icon">✉️</span>
+            <span class="share-text">Email</span>
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyLink(event)">
+            <span class="share-icon">🔗</span>
+            <span class="share-text">Copiar link</span>
+        </a>
+    </div>
+</div>
 
+<style>
+.share-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 50px 0;
+    text-align: center;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.share-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.share-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn:active {
+    transform: translateY(-1px);
+}
+
+.share-icon {
+    font-size: 1.3rem;
+}
+
+.share-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+}
+
+.share-btn.twitter {
+    background: linear-gradient(135deg, #1DA1F2, #0c85d0);
+    color: white;
+}
+
+.share-btn.linkedin {
+    background: linear-gradient(135deg, #0077B5, #005885);
+    color: white;
+}
+
+.share-btn.facebook {
+    background: linear-gradient(135deg, #1877F2, #0d5dbf);
+    color: white;
+}
+
+.share-btn.email {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.share-btn.copy {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.share-btn.copy.copied {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+@media (max-width: 768px) {
+    .share-section {
+        padding: 30px 25px;
+    }
+    
+    .share-buttons {
+        gap: 12px;
+    }
+    
+    .share-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .share-text {
+        display: none;
+    }
+    
+    .share-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .share-section {
+        padding: 25px 20px;
+    }
+    
+    .share-title {
+        font-size: 1.4rem;
+    }
+    
+    .share-buttons {
+        gap: 10px;
+    }
+}
+</style>
+
+<script>
+function shareWhatsApp(e) {
+    e.preventDefault();
+    const url = window.location.href;
+    const title = document.title;
+    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+}
+
+function shareTwitter(e) {
+    e.preventDefault();
+    const url = window.location.href;
+    const title = document.title;
+    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'width=550,height=420');
+}
+
+function shareLinkedIn(e) {
+    e.preventDefault();
+    const url = window.location.href;
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+}
+
+function shareFacebook(e) {
+    e.preventDefault();
+    const url = window.location.href;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+}
+
+function shareEmail(e) {
+    e.preventDefault();
+    const url = window.location.href;
+    const title = document.title;
+    window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent('Te comparto este artículo interesante: ' + url)}`;
+}
+
+function copyLink(e) {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    const url = window.location.href;
+    
+    navigator.clipboard.writeText(url).then(() => {
+        btn.classList.add('copied');
+        const textSpan = btn.querySelector('.share-text');
+        const originalText = textSpan.textContent;
+        textSpan.textContent = '¡Copiado!';
+        
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            textSpan.textContent = originalText;
+        }, 2000);
+    });
+}
+</script>
         <div class="back-links">
             <a href="../blog.html" class="back-link">← Volver al Blog</a>
             <a href="../../index.html" class="back-link">Ir al Inicio →</a>
