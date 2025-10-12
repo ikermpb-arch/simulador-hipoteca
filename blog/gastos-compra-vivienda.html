@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos de Compra de Vivienda: Guía Completa 2025 | Blog Hipotecas</title>
+    <meta name="description" content="Calculadora completa de todos los gastos al comprar una vivienda. Descubre cuánto dinero necesitas realmente más allá del precio de la casa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .article-content {
+            color: #374151;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 50px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 35px 0 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .calculator-hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .calculator-hero h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .calc-input-group {
+            margin-bottom: 25px;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .calc-result {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .calc-result-value {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .expense-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .expense-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .expense-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .expense-amount {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        .expense-description {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            background: #f8fafc;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 30px;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .expense-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .calc-result-value {
+                font-size: 2.5rem;
+            }
+
+            .back-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .calc-result-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="../blog.html" class="nav-link">← Volver al Blog</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="category-badge">💰 Gastos</span>
+                    <span class="article-date">📅 10 Septiembre 2025</span>
+                </div>
+                <h1 class="article-title">Gastos de Compra de Vivienda: Guía Completa 2025</h1>
+                <p class="article-intro">
+                    "La vivienda cuesta 200.000€, tengo 40.000€ ahorrados, perfecto". ERROR. Además del precio 
+                    y la entrada de la hipoteca, hay gastos que suman entre 10-15% adicional. Descubre todos 
+                    los costes reales para no llevarte sorpresas.
+                </p>
+            </header>
+
+            <div class="article-content">
+                <div class="calculator-hero">
+                    <h3>🧮 Calculadora Rápida de Gastos</h3>
+                    <div class="calc-input-group">
+                        <label class="calc-label">Precio de la vivienda (€):</label>
+                        <input type="number" class="calc-input" id="precioVivienda" value="200000" placeholder="200000">
+                    </div>
+                    <div class="calc-result">
+                        <span class="calc-result-value" id="totalNecesario">-</span>
+                        <p>Total que necesitas ahorrado (entrada 20% + gastos)</p>
+                    </div>
+                </div>
+
+                <script>
+                    const inp = document.getElementById('precioVivienda');
+                    const res = document.getElementById('totalNecesario');
+                    
+                    function calcular() {
+                        const precio = parseFloat(inp.value) || 0;
+                        const entrada = precio * 0.20;
+                        const gastos = precio * 0.11;
+                        const total = entrada + gastos;
+                        res.textContent = total.toLocaleString('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                    }
+                    
+                    inp.addEventListener('input', calcular);
+                    calcular();
+                </script>
+
+                <h2>Regla de Oro: Precio + 30%</h2>
+                
+                <p>
+                    Como regla rápida: <strong>necesitas ahorrado aproximadamente el 30-32% del precio de la vivienda</strong>. 
+                    Esto incluye:
+                </p>
+                <ul>
+                    <li>20% de entrada para la hipoteca</li>
+                    <li>10-12% de gastos asociados</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>Error común:</strong> Mucha gente solo cuenta la entrada del 20% y se olvida 
+                        de los gastos adicionales. Esto puede hacer que no llegues al dinero necesario el día 
+                        de la firma.
+                    </p>
+                </div>
+
+                <h2>Desglose Completo de Gastos</h2>
+
+                <h3>1. Entrada de la Hipoteca (20%)</h3>
+                
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">💵 Entrada / Aportación Inicial</span>
+                        <span class="expense-amount">40.000€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            Los bancos financian un <strong>máximo del 80%</strong> del valor de tasación 
+                            (o del precio de compra si es menor). Tú debes aportar el 20% restante.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>Ejemplo:</strong> Vivienda de 200.000€ → Entrada mínima: 40.000€
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Consejo:</strong> Si puedes aportar más del 20% (25-30%), conseguirás 
+                        mejores tipos de interés. Cada 10% adicional puede mejorar el tipo un 0.1-0.2%.
+                    </p>
+                </div>
+
+                <h3>2. Impuestos (6-10% del precio)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">📋 IVA o ITP</span>
+                        <span class="expense-amount">12.000-20.000€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p><strong>Vivienda nueva (obra nueva):</strong></p>
+                        <ul>
+                            <li>IVA: 10% del precio (21% si es vivienda de lujo +450m²)</li>
+                            <li>AJD (Actos Jurídicos Documentados): 1-1.5% según comunidad autónoma</li>
+                            <li><strong>Total: 11-11.5%</strong></li>
+                        </ul>
+
+                        <p style="margin-top: 15px;"><strong>Vivienda de segunda mano:</strong></p>
+                        <ul>
+                            <li>ITP (Impuesto de Transmisiones Patrimoniales): 6-10% según comunidad</li>
+                            <li>Madrid/Cataluña: 6%</li>
+                            <li>Andalucía/Valencia: 8-10%</li>
+                        </ul>
+
+                        <p style="margin-top: 15px;">
+                            <strong>Ejemplo vivienda 200.000€ segunda mano en Madrid:</strong> 12.000€
+                        </p>
+                    </div>
+                </div>
+
+                <h3>3. Notaría (600-1.200€)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">📜 Gastos de Notaría</span>
+                        <span class="expense-amount">600-1.200€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            El notario da fe de la operación y redacta la escritura. Los gastos dependen del 
+                            precio de la vivienda:
+                        </p>
+                        <ul>
+                            <li>Vivienda 100.000€: ~600€</li>
+                            <li>Vivienda 200.000€: ~800€</li>
+                            <li>Vivienda 300.000€: ~1.000€</li>
+                            <li>Vivienda 500.000€: ~1.200€</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>4. Registro de la Propiedad (400-700€)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">🏛️ Registro de la Propiedad</span>
+                        <span class="expense-amount">400-700€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            Inscribir la vivienda a tu nombre en el Registro. Es obligatorio y garantiza 
+                            que eres el propietario legal.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            Los honorarios son fijos según tablas oficiales y dependen del valor de la vivienda.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>5. Gestoría (300-600€)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">📁 Gestoría</span>
+                        <span class="expense-amount">300-600€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            La gestoría se encarga de todos los trámites: liquidar impuestos, inscribir 
+                            en el registro, etc. No es obligatorio (puedes hacerlo tú), pero muy recomendable.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Negociable:</strong> Algunos bancos asumen los gastos de gestoría como 
+                        parte de su oferta hipotecaria. Pregunta en la negociación.
+                    </p>
+                </div>
+
+                <h3>6. Tasación (300-500€)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">🏠 Tasación Oficial</span>
+                        <span class="expense-amount">300-500€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            El banco exige una tasación oficial de la vivienda realizada por una empresa 
+                            homologada. Determina cuánto vale realmente la casa.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>Importante:</strong> El banco prestará sobre el menor valor entre precio 
+                            de compra y tasación.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>7. Comisión de Apertura (0-2%)</h3>
+
+                <div class="expense-card">
+                    <div class="expense-header">
+                        <span class="expense-title">🏦 Comisión de Apertura</span>
+                        <span class="expense-amount">0-4.000€</span>
+                    </div>
+                    <div class="expense-description">
+                        <p>
+                            Algunos bancos cobran una comisión por estudiar y conceder la hipoteca. 
+                            Suele ser 0.5-2% del capital prestado.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>Ejemplo:</strong> Hipoteca 160.000€ con comisión 1% = 1.600€
+                        </p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>NEGOCIABLE:</strong> Esta comisión es totalmente negociable. Muchos bancos 
+                        la eliminan si insistes o traes ofertas de la competencia. NO la pagues sin negociar.
+                    </p>
+                </div>
+
+                <h2>Ejemplo Real Completo</h2>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Importe</th>
+                                <th>% sobre precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Precio de la vivienda</strong></td>
+                                <td>200.000€</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>Entrada (20%)</td>
+                                <td>40.000€</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>ITP (segunda mano Madrid 6%)</td>
+                                <td>12.000€</td>
+                                <td>6%</td>
+                            </tr>
+                            <tr>
+                                <td>Notaría</td>
+                                <td>800€</td>
+                                <td>0.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Registro</td>
+                                <td>500€</td>
+                                <td>0.25%</td>
+                            </tr>
+                            <tr>
+                                <td>Gestoría</td>
+                                <td>450€</td>
+                                <td>0.23%</td>
+                            </tr>
+                            <tr>
+                                <td>Tasación</td>
+                                <td>400€</td>
+                                <td>0.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Comisión apertura (negociada a 0%)</td>
+                                <td>0€</td>
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TOTAL NECESARIO</strong></td>
+                                <td><strong>54.150€</strong></td>
+                                <td><strong>27%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Gastos Adicionales Post-Compra</h2>
+
+                <p>
+                    Una vez comprada la vivienda, hay gastos recurrentes que debes considerar:
+                </p>
+
+                <h3>Gastos Anuales:</h3>
+                <ul>
+                    <li><strong>IBI (Impuesto de Bienes Inmuebles):</strong> 300-800€/año según zona y tamaño</li>
+                    <li><strong>Comunidad de propietarios:</strong> 400-1.200€/año (si es piso)</li>
+                    <li><strong>Seguro de hogar:</strong> 200-400€/año (obligatorio con hipoteca)</li>
+                    <li><strong>Seguro de vida:</strong> 300-600€/año (normalmente requerido)</li>
+                    <li><strong>Basuras:</strong> 50-150€/año</li>
+                </ul>
+
+                <p><strong>Total gastos anuales aproximados: 1.250-3.150€ (100-260€/mes adicionales a la hipoteca)</strong></p>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>No olvides:</strong> Estos gastos se suman a tu cuota de hipoteca. Si tu cuota 
+                        es 800€/mes, los gastos reales de la vivienda son 900-1.060€/mes.
+                    </p>
+                </div>
+
+                <h2>Vivienda Nueva vs Segunda Mano: Diferencias en Gastos</h2>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Nueva</th>
+                                <th>Segunda Mano</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Impuesto principal</td>
+                                <td>IVA 10%</td>
+                                <td>ITP 6-10%</td>
+                            </tr>
+                            <tr>
+                                <td>AJD</td>
+                                <td>1-1.5%</td>
+                                <td>No aplica</td>
+                            </tr>
+                            <tr>
+                                <td>Total impuestos</td>
+                                <td>11-11.5%</td>
+                                <td>6-10%</td>
+                            </tr>
+                            <tr>
+                                <td>Reformas necesarias</td>
+                                <td>Ninguna</td>
+                                <td>Posibles (5.000-30.000€)</td>
+                            </tr>
+                            <tr>
+                                <td>Muebles/electrodomésticos</td>
+                                <td>Todo nuevo</td>
+                                <td>A veces incluidos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    <strong>Conclusión:</strong> La vivienda nueva tiene más impuestos iniciales, pero la segunda 
+                    mano suele necesitar reformas/actualizaciones.
+                </p>
+
+                <h2>Cómo Reducir Gastos</h2>
+
+                <h3>1. Negociar Comisiones</h3>
+                <p>
+                    Comisión de apertura, gastos de tasación, gestoría... <strong>Todo es negociable</strong>. 
+                    Algunos bancos asumen estos gastos para captar clientes.
+                </p>
+
+                <h3>2. Bonificaciones Fiscales</h3>
+                <p>
+                    Si eres menor de 35 años, familia numerosa o compras en zonas específicas, puedes tener 
+                    bonificaciones del 100% en el AJD. Consulta tu comunidad autónoma.
+                </p>
+
+                <h3>3. Comparar Seguros</h3>
+                <p>
+                    No aceptes el seguro del banco sin comparar. Puedes contratar seguros externos más baratos 
+                    (aunque el banco puede penalizarte en el tipo de interés).
+                </p>
+
+                <h3>4. Hacer Trámites Tú Mismo</h3>
+                <p>
+                    Puedes ahorrarte la gestoría (300-600€) haciendo tú los trámites. Necesitarás tiempo 
+                    y paciencia, pero es posible.
+                </p>
+
+                <div class="cta-section">
+                    <h3>🧮 Calcula Tu Hipoteca Completa</h3>
+                    <p>
+                        Usa nuestro simulador para calcular no solo la cuota, sino también todos los gastos 
+                        asociados y saber exactamente cuánto dinero necesitas.
+                    </p>
+                    <a href="../../simulador-avanzado.html" class="cta-button">
+                        Simular Gastos Totales →
+                    </a>
+                </div>
+
+                <h2>Checklist Final: Gastos a Preparar</h2>
+
+                <div class="expense-card" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+                    <h3 style="margin-bottom: 20px;">✅ Antes de Comprar, Asegúrate de Tener:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">
+                            ☑ <strong>Entrada 20%:</strong> 40.000€ (para vivienda 200.000€)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">
+                            ☑ <strong>Impuestos:</strong> 12.000€ (ITP 6%)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">
+                            ☑ <strong>Notaría + Registro + Gestoría:</strong> 1.750€
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">
+                            ☑ <strong>Tasación:</strong> 400€
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb;">
+                            ☑ <strong>Fondo emergencia:</strong> 3.000-6.000€ (para imprevistos post-compra)
+                        </li>
+                        <li style="padding: 10px 0;">
+                            ☑ <strong>TOTAL RECOMENDADO:</strong> <strong>57.000-60.000€</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>Conclusión: Prepárate Para El Verdadero Coste</h2>
+
+                <p>
+                    Comprar una vivienda de 200.000€ no significa tener 40.000€ ahorrados. <strong>Significa 
+                    tener 55.000-60.000€</strong> para cubrir todo cómodamente.
+                </p>
+
+                <p>
+                    La diferencia entre llegar justo y llegar holgado es tu tranquilidad los primeros meses. 
+                    Siempre aparecen gastos imprevistos: muebles que no habías contado, pequeñas reparaciones, 
+                    cambios que quieres hacer...
+                </p>
+
+                <p>
+                    <strong>Mejor pecar de precavido</strong> y tener un colchón que llegar al límite y pasar 
+                    los primeros meses angustiado económicamente en tu nueva casa.
+                </p>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Regla de oro final:</strong> Si quieres comprar una vivienda de X euros, 
+                        no empieces a buscar hasta tener ahorrado el 35% de X. Ese 5% extra sobre el mínimo 
+                        del 30% es tu colchón de seguridad.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <div class="back-links">
+            <a href="../blog.html" class="back-link">← Volver al Blog</a>
+            <a href="../../index.html" class="back-link">Ir al Inicio →</a>
+        </div>
+    </div>
+</body>
+</html>
