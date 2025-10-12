@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Errores Fatales al Solicitar una Hipoteca | Blog Hipotecas</title>
+    <meta name="description" content="Los errores más costosos que cometen los compradores al solicitar una hipoteca y cómo evitarlos. Ahorra miles de euros conociendo estos fallos comunes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .article-content {
+            color: #374151;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 50px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 35px 0 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .error-card {
+            background: white;
+            border: 2px solid #fee2e2;
+            border-left: 6px solid #ef4444;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .error-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(239, 68, 68, 0.15);
+        }
+
+        .error-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .error-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 15px;
+        }
+
+        .error-description {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .cost-impact {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .cost-impact strong {
+            color: #92400e;
+        }
+
+        .solution-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #10b981;
+        }
+
+        .solution-box h5 {
+            color: #065f46;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .solution-box p {
+            color: #065f46;
+            margin: 0;
+        }
+
+        .warning-hero {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border: 3px solid #ef4444;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .warning-hero h3 {
+            font-size: 1.8rem;
+            color: #991b1b;
+            margin-bottom: 15px;
+        }
+
+        .warning-hero p {
+            font-size: 1.2rem;
+            color: #991b1b;
+            margin: 0;
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 30px;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .error-card {
+                padding: 25px 20px;
+            }
+
+            .back-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .error-card {
+                padding: 20px 15px;
+            }
+
+            .error-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="../blog.html" class="nav-link">← Volver al Blog</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="category-badge">⚠️ Errores Comunes</span>
+                    <span class="article-date">📅 20 Septiembre 2025</span>
+                </div>
+                <h1 class="article-title">10 Errores Fatales al Solicitar una Hipoteca</h1>
+                <p class="article-intro">
+                    Cada año miles de personas pierden dinero innecesariamente por cometer errores evitables 
+                    al contratar su hipoteca. Algunos pueden costarte decenas de miles de euros. Aprende a 
+                    identificarlos y evitarlos antes de que sea demasiado tarde.
+                </p>
+            </header>
+
+            <div class="article-content">
+                <div class="warning-hero">
+                    <h3>💸 Coste de los Errores</h3>
+                    <p>
+                        Los errores típicos en una hipoteca pueden costarte entre 15.000€ y 50.000€ 
+                        en la vida del préstamo. La buena noticia: todos son evitables.
+                    </p>
+                </div>
+
+                <h2>Error #1: No Comparar Ofertas</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">1</div>
+                    <h3 class="error-title">Quedarte con la Primera Oferta</h3>
+                    <div class="error-description">
+                        <p>
+                            El error número uno, y el más costoso. <strong>El 60% de los compradores solicitan 
+                            hipoteca solo en su banco habitual</strong> sin comparar con otros. Grave error.
+                        </p>
+                        <p>
+                            Tu banco conoce tu fidelidad y no te ofrecerá las mejores condiciones sin presión. 
+                            Los bancos reservan sus mejores ofertas para clientes nuevos o para quienes comparan 
+                            activamente.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Entre 15.000€ y 30.000€ en intereses extra 
+                        durante la vida de la hipoteca por no negociar un mejor tipo.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Solicita ofertas vinculantes en mínimo 4-5 bancos diferentes. Dedica 2-3 semanas 
+                            a este proceso. Incluye bancos online, que suelen tener mejores condiciones. 
+                            Usa las ofertas para negociar con tu banco favorito.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #2: No Leer la Escritura Completa</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">2</div>
+                    <h3 class="error-title">Firmar Sin Leer Todo el Documento</h3>
+                    <div class="error-description">
+                        <p>
+                            La escritura de hipoteca tiene 40-60 páginas de texto legal denso. <strong>El 80% 
+                            de la gente no la lee completa</strong> y firma confiando en lo que les han contado.
+                        </p>
+                        <p>
+                            El problema: a veces hay cláusulas que no te explicaron, comisiones ocultas, 
+                            condiciones de vinculación duras, o penalizaciones que no conocías.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Variable, pero puede incluir cláusulas abusivas, 
+                        comisiones inesperadas de miles de euros, o condiciones que no puedes cumplir.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Pide la escritura con 7-10 días de antelación. Léela completa, con calma. 
+                            Marca todo lo que no entiendas y pregunta al notario o a un asesor independiente. 
+                            No tengas prisa: es el contrato más importante de tu vida.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #3: Sobreestimar Tu Capacidad de Pago</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">3</div>
+                    <h3 class="error-title">Pedir el Máximo Que Te Aprueban</h3>
+                    <div class="error-description">
+                        <p>
+                            Los bancos pueden aprobar hipotecas donde la cuota sea hasta el <strong>35-40% 
+                            de tus ingresos netos</strong>. Pero que puedan aprobártelo no significa que 
+                            debas aceptarlo.
+                        </p>
+                        <p>
+                            Vivir con el 60-65% de tus ingresos después de pagar la hipoteca es muy ajustado. 
+                            No deja margen para imprevistos, ahorros, vacaciones, o simplemente vivir con 
+                            tranquilidad.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Estrés financiero constante, imposibilidad de ahorrar, 
+                        riesgo de impago si pierdes ingresos, y calidad de vida deteriorada.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Limita tu cuota al 30% de tus ingresos netos (mejor al 25% si puedes). Calcula 
+                            tu presupuesto real: ingresos menos todos los gastos fijos. Lo que sobre, dedica 
+                            máximo el 30% a la hipoteca. Deja colchón para imprevistos.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #4: Ignorar Los Gastos de Compra</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">4</div>
+                    <h3 class="error-title">No Calcular Los Gastos Adicionales</h3>
+                    <div class="error-description">
+                        <p>
+                            Muchos compradores primerizos piensan: "Tengo 40.000€ ahorrados, puedo comprar 
+                            una casa de 200.000€". <strong>Error grave.</strong>
+                        </p>
+                        <p>
+                            A los 40.000€ de entrada (20%) debes sumar: notaría (600-1.200€), registro 
+                            (400-700€), gestoría (300-600€), impuestos (6-10% del precio), tasación (300-500€). 
+                            Total adicional: <strong>15.000-24.000€ más</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Quedarte sin ahorros el día de la firma, tener 
+                        que pedir préstamos personales (carísimos), o no poder comprar porque te falta dinero.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Calcula que necesitas el 30-32% del precio de la vivienda: 20% entrada + 10-12% 
+                            gastos. Para una casa de 200.000€, necesitas 60.000-64.000€ ahorrados, no 40.000€.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #5: No Revisar Tu Historial Crediticio</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">5</div>
+                    <h3 class="error-title">Solicitar Sin Conocer Tu Scoring</h3>
+                    <div class="error-description">
+                        <p>
+                            Los bancos consultan tu historial en ASNEF, RAI y otros ficheros. <strong>Un impago 
+                            de 50€ de hace 2 años puede hacer que te rechacen</strong> una hipoteca de 200.000€.
+                        </p>
+                        <p>
+                            Muchas personas descubren impagos que ni recordaban (una factura de móvil, una multa) 
+                            el día que el banco les rechaza la hipoteca.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Rechazo de la hipoteca, perder la casa que querías, 
+                        perder las señas pagadas, y meses de retraso solucionando el problema.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            3-6 meses antes de solicitar la hipoteca, pide tu informe de crédito (gratis una 
+                            vez al año). Revísalo completo. Si hay errores o impagos antiguos, corrígelos 
+                            ANTES de solicitar. Salda cualquier deuda pendiente por pequeña que sea.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #6: No Calcular El Coste Real de Las Vinculaciones</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">6</div>
+                    <h3 class="error-title">Aceptar Productos Sin Calcular Su Coste</h3>
+                    <div class="error-description">
+                        <p>
+                            Te ofrecen hipoteca al 2.1% "solo" domiciliando nómina, contratando seguro de hogar 
+                            (300€/año), seguro de vida (400€/año), y plan de pensiones (1.200€/año). 
+                            <strong>Parece poco, pero suma 1.900€/año.</strong>
+                        </p>
+                        <p>
+                            En 25 años son 47.500€ adicionales. A veces compensa más una hipoteca al 2.4% 
+                            sin vinculaciones que una al 2.1% con productos que no necesitas.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Pagar 20.000-50.000€ extra en productos que no 
+                        necesitas, o que puedes conseguir más baratos en otro sitio.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Suma el coste real de TODOS los productos vinculados durante toda la vida de la 
+                            hipoteca. Compara con una hipoteca sin vinculaciones. Calcula la TAE real 
+                            (incluye productos). Decide con números, no con intuición.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #7: Elegir Mal el Plazo</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">7</div>
+                    <h3 class="error-title">Maximizar el Plazo Para Cuota Mínima</h3>
+                    <div class="error-description">
+                        <p>
+                            Piensas: "Cuanto más plazo, menos cuota mensual, mejor". <strong>No siempre.</strong>
+                        </p>
+                        <p>
+                            Una hipoteca de 200.000€ al 2.5% a 30 años tiene cuota de 790€/mes, pero pagas 
+                            84.000€ en intereses. La misma hipoteca a 20 años: cuota 1.060€/mes, pero solo 
+                            54.400€ en intereses. <strong>Ahorras 29.600€.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Pagar 20.000-40.000€ extra en intereses por 
+                        elegir un plazo demasiado largo que realmente no necesitabas.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Elige el plazo más corto que puedas pagar cómodamente (sin superar el 30% de tus 
+                            ingresos). Simula diferentes plazos y mira el interés total. Considera que puedes 
+                            amortizar anticipadamente si mejora tu situación.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #8: No Negociar Comisiones</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">8</div>
+                    <h3 class="error-title">Aceptar Todas Las Comisiones Sin Rechistar</h3>
+                    <div class="error-description">
+                        <p>
+                            Comisión de apertura (1% = 2.000€), comisión de amortización anticipada (1%), 
+                            comisión de estudio (300€)... <strong>Todo es negociable.</strong>
+                        </p>
+                        <p>
+                            Los bancos pueden eliminar o reducir estas comisiones si negocias. Muchos las 
+                            quitan completamente si traes ofertas de la competencia.
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Pagar 2.000-5.000€ en comisiones que podrías 
+                        haber eliminado o reducido significativamente.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Negocia TODAS las comisiones. Pide eliminar la de apertura (muchos bancos la quitan). 
+                            Negocia 0% en amortización anticipada (esencial). Compara ofertas y usa la competencia 
+                            como palanca de negociación.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Error #9: No Tener Fondo de Emergencia</h2>
+                
+                <div class="error-card">
+                    <div class="error-number">9</div>
+                    <h3 class="error-title">Gastarte TODOS Tus Ahorros en la Entrada</h3>
+                    <div class="error-description">
+                        <p>
+                            Has ahorrado 65.000€ durante años. Los usas todos para entrada + gastos de la hipoteca. 
+                            <strong>Te quedas a cero.</strong>
+                        </p>
+                        <p>
+                            Al mes siguiente: se rompe la lavadora, el coche necesita reparación, pierdes días 
+                            de trabajo por enfermedad. No tienes ahorros. Entras en números rojos, tarjetas de 
+                            crédito, préstamos rápidos (intereses del 20%+).
+                        </p>
+                    </div>
+                    
+                    <div class="cost-impact">
+                        <strong>💰 Coste del error:</strong> Endeudamiento adicional con intereses altísimos, 
+                        estrés financiero extremo, posible riesgo de impago de la hipoteca.
+                    </div>
+
+                    <div class="solution-box">
+                        <h5>✅ Cómo Evitarlo:</h5>
+                        <p>
+                            Además del dinero para entrada + gastos, mantén un fondo de
