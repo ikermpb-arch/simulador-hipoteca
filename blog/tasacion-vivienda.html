@@ -1,0 +1,1651 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasación de Vivienda: Cómo Funciona y Cuánto Cuesta | Blog Hipotecas</title>
+    <meta name="description" content="Guía completa sobre la tasación de vivienda. Descubre cómo se valora una casa, qué factores influyen, cuánto cuesta y cómo preparar tu vivienda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .article-content {
+            color: #374151;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 50px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 35px 0 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .price-hero {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .price-hero h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 20px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .calculator-section {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .calculator-section h3 {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .calc-input-group {
+            margin-bottom: 20px;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .calc-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+
+        .calc-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 2px solid #3b82f6;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #bfdbfe;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 2px solid #3b82f6;
+        }
+
+        .result-value {
+            font-weight: 800;
+            color: #1e40af;
+            font-size: 1.3rem;
+        }
+
+        .factors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .factor-card {
+            background: white;
+            border: 3px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .factor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .factor-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .factor-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .factor-description {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .example-box h4 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .scenario-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .scenario {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .scenario h5 {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .scenario-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        .danger-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .danger-box p {
+            margin: 0;
+            color: #991b1b;
+            font-weight: 500;
+        }
+
+        .comparison-table {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 25px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background: #e5e7eb;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            color: #4b5563;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist h4 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* Botones compartir */
+        .share-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .share-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .share-subtitle {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-icon {
+            font-size: 1.3rem;
+        }
+
+        .share-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: linear-gradient(135deg, #1DA1F2, #0c85d0);
+            color: white;
+        }
+
+        .share-btn.linkedin {
+            background: linear-gradient(135deg, #0077B5, #005885);
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: linear-gradient(135deg, #1877F2, #0d5dbf);
+            color: white;
+        }
+
+        .share-btn.email {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .share-btn.copy {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .share-btn.copy.copied {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 30px;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .factors-grid,
+            .scenario-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+
+            .share-buttons {
+                gap: 12px;
+            }
+            
+            .share-btn {
+                padding: 10px 16px;
+            }
+            
+            .share-text {
+                display: none;
+            }
+            
+            .share-icon {
+                font-size: 1.5rem;
+            }
+
+            .back-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .price-amount {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="../blog.html" class="nav-link">← Volver al Blog</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="category-badge">🏠 Guías</span>
+                    <span class="article-date">📅 26 Octubre 2025</span>
+                </div>
+                <h1 class="article-title">Tasación de Vivienda: Cómo Funciona y Cuánto Cuesta</h1>
+                <p class="article-intro">
+                    La tasación es imprescindible para conseguir una hipoteca. Descubre cómo se valora tu casa, 
+                    qué factores influyen en el precio, cuánto cuesta, quién la hace y cómo preparar tu vivienda 
+                    para obtener la mejor valoración.
+                </p>
+            </header>
+
+            <div class="article-content">
+                <div class="price-hero">
+                    <h3>💰 Coste Medio</h3>
+                    <div class="price-amount">250-350€</div>
+                    <p class="price-description">
+                        Precio habitual de una tasación oficial para hipoteca en España
+                    </p>
+                </div>
+
+                <h2>¿Qué Es la Tasación de Vivienda?</h2>
+                
+                <p>
+                    La tasación es un <strong>informe técnico oficial</strong> que determina el valor real de mercado 
+                    de una vivienda. Lo realiza una empresa homologada por el Banco de España y es obligatorio para 
+                    conseguir una hipoteca.
+                </p>
+
+                <p>
+                    El banco necesita saber cuánto vale realmente la casa porque <strong>la vivienda es su garantía</strong>. 
+                    Si no pagas, ejecutan la hipoteca y venden la casa. Por eso necesitan un valor fiable y objetivo.
+                </p>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Importante:</strong> La tasación NO es lo mismo que el precio de venta. Puede ser 
+                        superior o inferior al precio acordado. El banco prestará como máximo el 80% del valor de tasación 
+                        o del precio de compra, lo que sea menor.
+                    </p>
+                </div>
+
+                <h2>¿Quién Hace la Tasación?</h2>
+
+                <p>
+                    Solo pueden tasar viviendas las <strong>sociedades de tasación homologadas</strong> e inscritas 
+                    en el registro oficial del Banco de España. Algunas de las más conocidas son:
+                </p>
+
+                <ul>
+                    <li><strong>Tinsa</strong> - La más grande de España</li>
+                    <li><strong>Sociedad de Tasación</strong> - Veterana del sector</li>
+                    <li><strong>Valoriza</strong> - Grupo Applus+</li>
+                    <li><strong>Tecnitasa</strong> - Especializada en vivienda</li>
+                    <li><strong>Alia Tasaciones</strong> - Red nacional</li>
+                </ul>
+
+                <p>
+                    Normalmente <strong>el banco elige la tasadora</strong>, aunque tú pagas el servicio. Algunos bancos 
+                    permiten elegir entre su lista de tasadoras homologadas.
+                </p>
+
+                <h2>Proceso de Tasación: Paso a Paso</h2>
+
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>1. Solicitud de la Tasación</h4>
+                            <p>El banco contrata la tasadora una vez pre-aprueba tu hipoteca. Pagas por adelantado 
+                            (250-350€) o lo descuentan de la hipoteca final.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>2. Contacto del Tasador</h4>
+                            <p>La tasadora te llama para concertar cita. Necesitan acceso al interior de la vivienda. 
+                            La visita dura 30-45 minutos.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>3. Visita a la Vivienda</h4>
+                            <p>El tasador inspecciona toda la casa: mide, fotografía, comprueba estado, orientación, 
+                            calidades, documentación (cédula de habitabilidad, planos).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>4. Análisis de Mercado</h4>
+                            <p>Estudian precios de viviendas comparables en la zona, oferta/demanda, tendencias del 
+                            barrio, evolución de precios.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>5. Elaboración del Informe</h4>
+                            <p>Redactan el informe oficial con el valor final. Incluye descripción completa, fotos, 
+                            cálculos, comparables y valoración certificada.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>6. Entrega al Banco</h4>
+                            <p>La tasadora envía el informe al banco (5-10 días hábiles). El banco decide si concede 
+                            la hipoteca según ese valor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Factores que Influyen en la Tasación</h2>
+
+                <div class="factors-grid">
+                    <div class="factor-card">
+                        <div class="factor-icon">📍</div>
+                        <h3 class="factor-title">Ubicación</h3>
+                        <p class="factor-description">
+                            El factor MÁS importante. Barrio, ciudad, proximidad a servicios, transporte, zonas verdes. 
+                            Puede variar el valor un 40-60%.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">📏</div>
+                        <h3 class="factor-title">Superficie</h3>
+                        <p class="factor-description">
+                            Metros cuadrados útiles y construidos. Incluye balcones, terrazas (al 50%), trasteros, 
+                            garajes. Más metros = más valor.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">🏗️</div>
+                        <h3 class="factor-title">Estado de Conservación</h3>
+                        <p class="factor-description">
+                            Nuevo, buen estado, reformado, a reformar. Viviendas reformadas valen 10-20% más. 
+                            Defectos graves bajan mucho el valor.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">📅</div>
+                        <h3 class="factor-title">Antigüedad</h3>
+                        <p class="factor-description">
+                            Año de construcción del edificio. Viviendas modernas (menos de 10 años) valen más. 
+                            Edificios antiguos pueden tener problemas estructurales.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">🌞</div>
+                        <h3 class="factor-title">Orientación</h3>
+                        <p class="factor-description">
+                            Sur y sureste son las mejores (más luz). Norte vale menos. La luz natural puede cambiar 
+                            el valor un 5-10%.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">🏢</div>
+                        <h3 class="factor-title">Altura y Vistas</h3>
+                        <p class="factor-description">
+                            Plantas altas con ascensor valen más. Vistas despejadas o al mar aumentan valor. 
+                            Bajos pueden valer 10-15% menos.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">✨</div>
+                        <h3 class="factor-title">Calidades</h3>
+                        <p class="factor-description">
+                            Materiales, acabados, instalaciones. Cocina y baños modernos, aire acondicionado, 
+                            parquet, ventanas dobles aumentan valor.
+                        </p>
+                    </div>
+
+                    <div class="factor-card">
+                        <div class="factor-icon">🏊</div>
+                        <h3 class="factor-title">Extras del Edificio</h3>
+                        <p class="factor-description">
+                            Piscina, gimnasio, portero, jardines, seguridad. Comunidades con servicios valen 
+                            más, aunque también tienen gastos mayores.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Métodos de Valoración</h2>
+
+                <p>
+                    Los tasadores utilizan principalmente <strong>tres métodos</strong> para calcular el valor, 
+                    aunque el más común es el de comparación:
+                </p>
+
+                <h3>1. Método de Comparación (el más usado)</h3>
+                <p>
+                    Comparan tu vivienda con <strong>otras similares vendidas recientemente</strong> en la zona. 
+                    Ajustan el precio según diferencias en superficie, estado, planta, etc.
+                </p>
+
+                <div class="example-box">
+                    <h4>📊 Ejemplo de Comparación</h4>
+                    
+                    <div class="scenario-comparison">
+                        <div class="scenario">
+                            <h5>Tu Vivienda</h5>
+                            <div class="scenario-row">
+                                <span>Superficie:</span>
+                                <strong>85 m²</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Estado:</span>
+                                <strong>Reformado</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Planta:</span>
+                                <strong>5ª con ascensor</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Orientación:</span>
+                                <strong>Sur</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span><strong>Tasación:</strong></span>
+                                <strong style="color: #10b981;">210.000€</strong>
+                            </div>
+                        </div>
+
+                        <div class="scenario">
+                            <h5>Comparable 1</h5>
+                            <div class="scenario-row">
+                                <span>Superficie:</span>
+                                <strong>80 m²</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Estado:</span>
+                                <strong>Buen estado</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Planta:</span>
+                                <strong>3ª con ascensor</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span>Orientación:</span>
+                                <strong>Este</strong>
+                            </div>
+                            <div class="scenario-row">
+                                <span><strong>Vendida por:</strong></span>
+                                <strong style="color: #3b82f6;">195.000€</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px; text-align: center; font-weight: 600;">
+                        El tasador ajusta +5m² más, +reforma, +2 plantas, +orientación sur = +15.000€
+                    </p>
+                </div>
+
+                <h3>2. Método de Coste</h3>
+                <p>
+                    Calculan cuánto costaría <strong>construir la vivienda nueva hoy</strong>, restan depreciación 
+                    por antigüedad y uso. Se usa en viviendas nuevas o únicas.
+                </p>
+
+                <h3>3. Método de Capitalización</h3>
+                <p>
+                    Basado en la <strong>renta que podría generar</strong> alquilando la vivienda. Poco usado para 
+                    vivienda habitual, más para inversión.
+                </p>
+
+                <h2>¿Cuánto Cuesta la Tasación?</h2>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Vivienda</th>
+                                <th>Precio Habitual</th>
+                                <th>Tiempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Piso estándar</td>
+                                <td>250-350€</td>
+                                <td>5-10 días</td>
+                            </tr>
+                            <tr>
+                                <td>Chalet/Casa unifamiliar</td>
+                                <td>400-600€</td>
+                                <td>7-15 días</td>
+                            </tr>
+                            <tr>
+                                <td>Vivienda de lujo</td>
+                                <td>600-1.000€+</td>
+                                <td>10-20 días</td>
+                            </tr>
+                            <tr>
+                                <td>Local comercial</td>
+                                <td>350-500€</td>
+                                <td>7-12 días</td>
+                            </tr>
+                            <tr>
+                                <td>Terreno/Finca</td>
+                                <td>300-800€</td>
+                                <td>10-15 días</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    El precio depende de la complejidad, superficie, ubicación y urgencia. <strong>Normalmente lo pagas 
+                    tú</strong> aunque sea el banco quien lo encarga.
+                </p>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>Ojo:</strong> Algunas entidades incluyen la tasación gratis si contratas productos 
+                        vinculados (seguros, tarjetas, domiciliación nómina). Compara si compensa.
+                    </p>
+                </div>
+
+                <h2>Calculadora: Estima el Valor de Tu Vivienda</h2>
+
+                <div class="calculator-section">
+                    <h3>🏠 Estimador Rápido de Tasación</h3>
+                    <p style="text-align: center; color: #6b7280; margin-bottom: 20px;">
+                        Estimación orientativa basada en el precio medio de tu zona
+                    </p>
+                    
+                    <div class="calc-input-group">
+                        <label class="calc-label">Superficie útil (m²):</label>
+                        <input type="number" class="calc-input" id="superficie" value="85" placeholder="85">
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label class="calc-label">Precio medio zona (€/m²):</label>
+                        <input type="number" class="calc-input" id="preciom2" value="2500" placeholder="2500">
+                        <small style="color: #6b7280; font-size: 0.9rem;">
+                            Consulta portales inmobiliarios de tu zona
+                        </small>
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label class="calc-label">Estado de la vivienda:</label>
+                        <select class="calc-select" id="estado">
+                            <option value="1.15">Recién reformado (+15%)</option>
+                            <option value="1.05">Buen estado (+5%)</option>
+                            <option value="1.0" selected>Estado normal</option>
+                            <option value="0.90">Necesita reforma (-10%)</option>
+                            <option value="0.80">Mal estado (-20%)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-input-group">
+                        <label class="calc-label">Extras:</label>
+                        <select class="calc-select" id="extras">
+                            <option value="1.10">Garaje + Trastero (+10%)</option>
+                            <option value="1.05">Solo garaje o trastero (+5%)</option>
+                            <option value="1.0" selected>Sin extras</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-result">
+                        <div class="result-row">
+                            <span>Valor base:</span>
+                            <span class="result-value" id="valorBase">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span>Ajuste por estado:</span>
+                            <span class="result-value" id="ajusteEstado">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span>Ajuste por extras:</span>
+                            <span class="result-value" id="ajusteExtras">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span><strong>Estimación tasación:</strong></span>
+                            <span class="result-value" id="valorFinal">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function calcularTasacion() {
+                        const superficie = parseFloat(document.getElementById('superficie').value) || 0;
+                        const preciom2 = parseFloat(document.getElementById('preciom2').value) || 0;
+                        const estado = parseFloat(document.getElementById('estado').value) || 1;
+                        const extras = parseFloat(document.getElementById('extras').value) || 1;
+                        
+                        const valorBase = superficie * preciom2;
+                        const valorConEstado = valorBase * estado;
+                        const valorFinal = valorConEstado * extras;
+                        
+                        const ajusteEstado = valorConEstado - valorBase;
+                        const ajusteExtras = valorFinal - valorConEstado;
+                        
+                        document.getElementById('valorBase').textContent = 
+                            valorBase.toLocaleString('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                        
+                        document.getElementById('ajusteEstado').textContent = 
+                            (ajusteEstado >= 0 ? '+' : '') + ajusteEstado.toLocaleString('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                        
+                        document.getElementById('ajusteExtras').textContent = 
+                            (ajusteExtras >= 0 ? '+' : '') + ajusteExtras.toLocaleString('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                        
+                        document.getElementById('valorFinal').textContent = 
+                            valorFinal.toLocaleString('es-ES', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                    }
+                    
+                    document.getElementById('superficie').addEventListener('input', calcularTasacion);
+                    document.getElementById('preciom2').addEventListener('input', calcularTasacion);
+                    document.getElementById('estado').addEventListener('change', calcularTasacion);
+                    document.getElementById('extras').addEventListener('change', calcularTasacion);
+                    calcularTasacion();
+                </script>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>Atención:</strong> Esto es solo una estimación orientativa. La tasación oficial 
+                        puede variar significativamente según múltiples factores que solo un tasador presencial puede evaluar.
+                    </p>
+                </div>
+
+                <h2>Cómo Preparar Tu Vivienda para la Tasación</h2>
+
+                <p>
+                    Aunque no puedes cambiar la ubicación o los metros, <strong>SÍ puedes mejorar la impresión</strong> 
+                    y asegurarte de que el tasador valore todo correctamente:
+                </p>
+
+                <div class="checklist">
+                    <h4>✅ Checklist Pre-Tasación</h4>
+                    <ul>
+                        <li><strong>Limpia y ordena a fondo</strong> - Primera impresión importa</li>
+                        <li><strong>Haz pequeñas reparaciones</strong> - Arregla grifos, puertas, enchufes</li>
+                        <li><strong>Máxima luz natural</strong> - Abre cortinas, enciende luces</li>
+                        <li><strong>Prepara documentación</strong> - Cédula habitabilidad, planos, IBI, recibos comunidad</li>
+                        <li><strong>Reformas recientes</strong> - Ten facturas de reformas (suma valor)</li>
+                        <li><strong>Certificado energético</strong> - Si lo tienes, muéstralo</li>
+                        <li><strong>Menciona extras</strong> - Aire acondicionado, alarma, muebles empotrados</li>
+                        <li><strong>Estado del edificio</strong> - Si se ha rehabilitado, coméntalo</li>
+                        <li><strong>Servicios cercanos</strong> - Recuerda metro, colegios, comercios</li>
+                        <li><strong>Sin malos olores</strong> - Ventila bien, evita olores de comida/tabaco</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Truco:</strong> Si has hecho reformas sin declarar, el tasador lo detectará. 
+                        Es mejor declararlo y pagar impuestos que arriesgarte a problemas legales o que no lo valoren.
+                    </p>
+                </div>
+
+                <h2>¿Qué Pasa Si La Tasación Es Baja?</h2>
+
+                <p>
+                    Imagina que acordaste comprar por <strong>220.000€</strong> pero la tasación sale en <strong>200.000€</strong>. 
+                    ¿Qué ocurre?
+                </p>
+
+                <div class="example-box">
+                    <h4>📉 Escenario: Tasación Inferior al Precio de Compra</h4>
+                    
+                    <div class="scenario-row" style="margin-bottom: 15px;">
+                        <span>Precio acordado compra:</span>
+                        <strong>220.000€</strong>
+                    </div>
+                    <div class="scenario-row" style="margin-bottom: 15px;">
+                        <span>Tasación oficial:</span>
+                        <strong style="color: #ef4444;">200.000€</strong>
+                    </div>
+                    <div class="scenario-row" style="margin-bottom: 15px;">
+                        <span>Hipoteca pedida (80%):</span>
+                        <strong>176.000€ (80% de 220.000€)</strong>
+                    </div>
+                    <div class="scenario-row" style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #e5e7eb;">
+                        <span>Hipoteca que te dan:</span>
+                        <strong style="color: #ef4444;">160.000€ (80% de 200.000€)</strong>
+                    </div>
+
+                    <p style="font-weight: 700; color: #ef4444; text-align: center; margin-bottom: 15px;">
+                        ⚠️ Te faltan 16.000€ de financiación
+                    </p>
+
+                    <h4 style="margin: 25px 0 15px;">Opciones:</h4>
+                    <ol style="padding-left: 20px;">
+                        <li style="margin-bottom: 12px;">
+                            <strong>Aportar más entrada</strong> - Poner 60.000€ en vez de 44.000€
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <strong>Renegociar con el vendedor</strong> - Pedirle bajar a 200.000€
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <strong>Pedir segunda tasación</strong> - A veces dan valor diferente
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <strong>Buscar otro banco</strong> - Diferentes tasadoras, diferentes valores
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <strong>Financiación complementaria</strong> - Préstamo personal (NO recomendable)
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="danger-box">
+                    <p>
+                        🚨 <strong>Importante:</strong> Si la tasación sale MUCHO más baja (20-30%) que el precio, 
+                        puede ser señal de que estás pagando de más. Reconsidera la operación o negocia duramente.
+                    </p>
+                </div>
+
+                <h2>Validez de la Tasación</h2>
+
+                <p>
+                    Las tasaciones tienen una <strong>validez de 6 meses</strong> desde su emisión. Pasado ese tiempo, 
+                    necesitarás una nueva si el banco no ha formalizado la hipoteca.
+                </p>
+
+                <p>
+                    Si cambias de banco, <strong>la nueva entidad NO acepta la tasación anterior</strong>. Tendrás 
+                    que pagar otra tasación con su tasadora homologada. Esto puede costar 250-350€ adicionales.
+                </p>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Consejo:</strong> Si estás comparando bancos, hazlo ANTES de pagar la tasación. 
+                        Una vez la tengas, cambiar de banco implica pagar otra.
+                    </p>
+                </div>
+
+                <h2>Tasación vs Precio de Mercado</h2>
+
+                <p>
+                    Es importante entender que <strong>tasación ≠ precio de venta</strong>. Pueden diferir por varias razones:
+                </p>
+
+                <h3>La Tasación Suele Ser Más Conservadora</h3>
+                <p>
+                    Los tasadores trabajan para el banco y <strong>tienden a ser prudentes</strong>. Prefieren quedarse 
+                    cortos que arriesgarse. El banco necesita garantías, no especulaciones.
+                </p>
+
+                <h3>El Mercado Es Emocional</h3>
+                <p>
+                    Un comprador puede pagar más porque le ENCANTA esa casa específica. La tasación es técnica y objetiva, 
+                    <strong>no incluye el valor emocional</strong>.
+                </p>
+
+                <h3>Diferencias Temporales</h3>
+                <p>
+                    El mercado cambia rápido, especialmente en zonas calientes. La tasación usa datos de ventas pasadas 
+                    (3-6 meses atrás), <strong>puede estar desfasada</strong> en mercados muy dinámicos.
+                </p>
+
+                <div class="example-box">
+                    <h4>💭 Caso Real Típico</h4>
+                    <p style="margin-bottom: 15px;">
+                        Piso en zona de moda, varios interesados compitiendo. El vendedor consigue 240.000€. 
+                        Pero la tasación sale en 220.000€ porque:
+                    </p>
+                    <ul style="margin-bottom: 0;">
+                        <li>Los comparables son de hace 4 meses (mercado ha subido)</li>
+                        <li>El tasador usa criterios conservadores</li>
+                        <li>No considera el "factor moda" de la zona</li>
+                        <li>La competencia entre compradores infló el precio</li>
+                    </ul>
+                    <p style="margin-top: 20px; text-align: center; font-weight: 600; color: #667eea;">
+                        Resultado: Ambos valores son "correctos" desde su perspectiva
+                    </p>
+                </div>
+
+                <h2>¿Se Puede Recurrir una Tasación?</h2>
+
+                <p>
+                    <strong>Sí, pero es complicado</strong>. Si crees que la tasación es injustamente baja, puedes:
+                </p>
+
+                <h3>1. Solicitar Segunda Tasación</h3>
+                <p>
+                    Pide al banco otra tasación con diferente tasadora. Cuesta 250-350€ más, pero a veces sale más alta. 
+                    El banco usará la más favorable si ambas son razonables.
+                </p>
+
+                <h3>2. Aportar Pruebas</h3>
+                <p>
+                    Si hay errores evidentes (metros mal medidos, no contaron reforma, etc.), presenta documentación: 
+                    planos, facturas, fotos. La tasadora puede revisar.
+                </p>
+
+                <h3>3. Cambiar de Banco</h3>
+                <p>
+                    Otra entidad = otra tasadora = posible valor diferente. Pero tendrás que pagar nueva tasación 
+                    y reiniciar el proceso.
+                </p>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>Realidad:</strong> Recurrir tasaciones es lento, caro y no siempre funciona. 
+                        Solo hazlo si hay errores claros o diferencia muy grande (>15%).
+                    </p>
+                </div>
+
+                <h2>Tasación para Venta vs para Hipoteca</h2>
+
+                <p>
+                    Existen diferentes tipos de tasación según el objetivo:
+                </p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Objetivo</th>
+                                <th>Coste</th>
+                                <th>Validez Banco</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tasación Hipotecaria</strong></td>
+                                <td>Conseguir hipoteca (obligatoria)</td>
+                                <td>250-350€</td>
+                                <td>✅ Sí</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Valoración Online</strong></td>
+                                <td>Orientación rápida</td>
+                                <td>0-50€</td>
+                                <td>❌ No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tasación Pericial</strong></td>
+                                <td>Herencias, divorcios, litigios</td>
+                                <td>300-500€</td>
+                                <td>❌ No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Certificado Catastral</strong></td>
+                                <td>Impuestos</td>
+                                <td>Gratis</td>
+                                <td>❌ No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    Para conseguir hipoteca <strong>SOLO vale la tasación hipotecaria oficial</strong> de sociedad homologada. 
+                    Las valoraciones online o de agencias inmobiliarias no sirven.
+                </p>
+
+                <h2>Errores Comunes en la Tasación</h2>
+
+                <h3>❌ Error 1: Confundir m² Útiles con Construidos</h3>
+                <p>
+                    Los m² construidos incluyen muros, zonas comunes. Los útiles son la superficie pisable. 
+                    <strong>Diferencia: 15-20%</strong>. Verifica que el tasador mide correctamente.
+                </p>
+
+                <h3>❌ Error 2: No Declarar Reformas</h3>
+                <p>
+                    Una cocina nueva o baño reformado suman valor. <strong>Muestra facturas</strong> al tasador. 
+                    Si no lo sabe, no lo valora.
+                </p>
+
+                <h3>❌ Error 3: Vivienda Desordenada</h3>
+                <p>
+                    Aunque no debería influir, la primera impresión cuenta. Una casa limpia y ordenada 
+                    <strong>genera mejor predisposición</strong> en el tasador.
+                </p>
+
+                <h3>❌ Error 4: No Estar Presente</h3>
+                <p>
+                    Si no estás, el tasador puede pasar por alto detalles positivos. <strong>Acompáñale</strong>, 
+                    señala mejoras, extras, características especiales.
+                </p>
+
+                <h3>❌ Error 5: Esconder Problemas</h3>
+                <p>
+                    Humedades, grietas, problemas estructurales... el tasador los detectará. Es peor intentar ocultarlos. 
+                    <strong>Transparencia siempre</strong>.
+                </p>
+
+                <div class="cta-section">
+                    <h3>🧮 Calcula Tu Hipoteca</h3>
+                    <p>
+                        Una vez conozcas el valor de tasación, usa nuestro simulador para calcular 
+                        exactamente cuánto te prestará el banco y tu cuota mensual.
+                    </p>
+                    <a href="../../simulador-avanzado.html" class="cta-button">
+                        Simular Hipoteca →
+                    </a>
+                </div>
+
+                <h2>Preguntas Frecuentes</h2>
+
+                <h3>¿Puedo elegir yo la tasadora?</h3>
+                <p>
+                    Normalmente NO. El banco elige entre sus tasadoras homologadas para evitar conflictos de interés. 
+                    Algunos bancos permiten elegir de una lista cerrada.
+                </p>
+
+                <h3>¿Puedo usar la misma tasación en varios bancos?</h3>
+                <p>
+                    NO. Cada banco exige tasación de sus sociedades homologadas. Si cambias de banco, 
+                    pagas otra tasación (250-350€ más).
+                </p>
+
+                <h3>¿Quién paga la tasación?</h3>
+                <p>
+                    <strong>El comprador</strong> (tú). Lo pagas antes de que vengan o lo descuentan del importe 
+                    final de la hipoteca. Si la operación se cancela, pierdes ese dinero.
+                </p>
+
+                <h3>¿La tasación tiene IVA?</h3>
+                <p>
+                    SÍ, la tasación lleva <strong>21% de IVA</strong>. Si te dicen 300€, realmente pagas 363€.
+                </p>
+
+                <h3>¿Cuánto tarda la tasación?</h3>
+                <p>
+                    Desde que contratan hasta que llega al banco: <strong>5-10 días hábiles</strong> normalmente. 
+                    Puede ser más rápido si es urgente (pagando suplemento) o más lento en temporada alta.
+                </p>
+
+                <h3>¿Qué pasa si no estoy de acuerdo?</h3>
+                <p>
+                    Puedes pedir segunda tasación (pagas otra), aportar pruebas de errores, o cambiar de banco 
+                    (nueva tasación también). Es complicado cambiar el valor de una tasación ya emitida.
+                </p>
+
+                <h3>¿La tasación sirve para vender?</h3>
+                <p>
+                    Te da una referencia de valor, pero <strong>NO la usas para fijar el precio de venta</strong>. 
+                    El mercado manda: puedes vender por más o por menos según demanda, urgencia, estado real.
+                </p>
+
+                <h3>¿Puedo estar presente en la tasación?</h3>
+                <p>
+                    <strong>SÍ y es recomendable</strong>. Puedes acompañar al tasador, señalar mejoras, 
+                    aportar documentación. Pero no presiones ni condiciones: debe ser objetivo.
+                </p>
+
+                <h3>¿Qué documentos debo tener preparados?</h3>
+                <p>
+                    Cédula de habitabilidad, nota simple registral, recibo IBI, estatutos comunidad, 
+                    facturas de reformas, planos (si los tienes), certificado energético.
+                </p>
+
+                <h2>Consejos Finales</h2>
+
+                <div class="checklist">
+                    <h4>✅ Resumen: Maximiza Tu Tasación</h4>
+                    <ul>
+                        <li><strong>Negocia el banco ANTES</strong> - Cambiar después implica re-tasar</li>
+                        <li><strong>Prepara la casa</strong> - Limpia, ordena, repara detalles</li>
+                        <li><strong>Documenta TODO</strong> - Reformas, mejoras, extras con facturas</li>
+                        <li><strong>Estate presente</strong> - Acompaña al tasador, señala virtudes</li>
+                        <li><strong>Aporta información</strong> - Servicios cercanos, transporte, colegios</li>
+                        <li><strong>Sé transparente</strong> - No ocultes problemas, el tasador los verá</li>
+                        <li><strong>Compara precios zona</strong> - Sé realista con expectativas</li>
+                        <li><strong>Ten plan B</strong> - Si sale baja, opciones: renegociar o más entrada</li>
+                        <li><strong>Lee el informe</strong> - Revisa que no haya errores evidentes</li>
+                        <li><strong>Guarda la tasación</strong> - Vale 6 meses, te puede servir</li>
+                    </ul>
+                </div>
+
+                <h2>Conclusión</h2>
+
+                <p>
+                    La tasación es un <strong>trámite inevitable</strong> pero importante en el proceso hipotecario. 
+                    Determina cuánto te prestará el banco y puede condicionar toda la operación.
+                </p>
+
+                <p>
+                    <strong>Puntos clave a recordar:</strong>
+                </p>
+                <ul>
+                    <li>Es obligatoria, oficial y debe hacerla sociedad homologada</li>
+                    <li>Cuesta 250-350€ y la pagas tú</li>
+                    <li>Tarda 5-10 días hábiles</li>
+                    <li>El banco presta sobre el MENOR entre tasación y precio de compra</li>
+                    <li>Vale 6 meses desde emisión</li>
+                    <li>Puedes preparar tu casa para optimizar el resultado</li>
+                    <li>Si sale baja, tienes opciones pero ninguna es perfecta</li>
+                    <li>Cada banco exige su propia tasación</li>
+                </ul>
+
+                <p>
+                    No puedes controlar completamente el resultado, pero <strong>SÍ puedes asegurarte de que el tasador 
+                    valora correctamente</strong> todas las virtudes de tu vivienda. Una buena preparación puede marcar 
+                    la diferencia entre una tasación ajustada y una que te permite conseguir mejor financiación.
+                </p>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Último consejo:</strong> No te obsesiones con la tasación. Es solo un número técnico. 
+                        Lo importante es que consigas la hipoteca, compres la casa que te gusta, y puedas pagarla 
+                        cómodamente cada mes. El valor real de tu vivienda es el hogar que construyas en ella.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Botones de Compartir -->
+        <div class="share-section">
+            <h3 class="share-title">💬 Comparte este artículo</h3>
+            <p class="share-subtitle">Ayuda a otros a entender la tasación de vivienda</p>
+            <div class="share-buttons">
+                <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp(event)">
+                    <span class="share-icon">📱</span>
+                    <span class="share-text">WhatsApp</span>
+                </a>
+                <a href="#" class="share-btn twitter" onclick="shareTwitter(event)">
+                    <span class="share-icon">🐦</span>
+                    <span class="share-text">Twitter</span>
+                </a>
+                <a href="#" class="share-btn linkedin" onclick="shareLinkedIn(event)">
+                    <span class="share-icon">💼</span>
+                    <span class="share-text">LinkedIn</span>
+                </a>
+                <a href="#" class="share-btn facebook" onclick="shareFacebook(event)">
+                    <span class="share-icon">📘</span>
+                    <span class="share-text">Facebook</span>
+                </a>
+                <a href="#" class="share-btn email" onclick="shareEmail(event)">
+                    <span class="share-icon">✉️</span>
+                    <span class="share-text">Email</span>
+                </a>
+                <a href="#" class="share-btn copy" onclick="copyLink(event)">
+                    <span class="share-icon">🔗</span>
+                    <span class="share-text">Copiar link</span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+        function shareWhatsApp(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+        }
+
+        function shareTwitter(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareLinkedIn(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareFacebook(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareEmail(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent('Te comparto este artículo interesante: ' + url)}`;
+        }
+
+        function copyLink(e) {
+            e.preventDefault();
+            const btn = e.currentTarget;
+            const url = window.location.href;
+            
+            navigator.clipboard.writeText(url).then(() => {
+                btn.classList.add('copied');
+                const textSpan = btn.querySelector('.share-text');
+                const originalText = textSpan.textContent;
+                textSpan.textContent = '¡Copiado!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    textSpan.textContent = originalText;
+                }, 2000);
+            });
+        }
+        </script>
+
+        <div class="back-links">
+            <a href="../blog.html" class="back-link">← Volver al Blog</a>
+            <a href="../../index.html" class="back-link">Ir al Inicio →</a>
+        </div>
+    </div>
+  <script type='text/javascript' src='//pl27742916.effectivegatecpm.com/be/9a/dd/be9add3c482fa41eb4b5c0a4e1f85e74.js'></script>
+</body>
+  https://www.effectivegatecpm.com/vhjmu9y6?key=ab87a3b25bdae852f66ed532075ef0d3
+</html>
