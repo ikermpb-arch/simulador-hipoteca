@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aval Hipotecario: Qué Es, Cuándo lo Necesitas y Riesgos | Blog Hipotecas</title>
+    <meta name="description" content="Guía completa sobre el aval hipotecario. Descubre qué es, cuándo lo pide el banco, qué riesgos asume el avalista y alternativas disponibles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.7;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: containerFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-date {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-intro {
+            font-size: 1.25rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .article-content {
+            color: #374151;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 50px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 35px 0 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 25px 0;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .warning-hero {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.3);
+        }
+
+        .warning-hero h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .warning-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .risk-card {
+            background: white;
+            border: 3px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .risk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .risk-card.high-risk {
+            border-color: #ef4444;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        }
+
+        .risk-card.medium-risk {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .risk-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .risk-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .risk-description {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .example-box h4 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .scenario-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .scenario {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .scenario h5 {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .scenario-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        .danger-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .danger-box p {
+            margin: 0;
+            color: #991b1b;
+            font-weight: 500;
+        }
+
+        .comparison-table {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist h4 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+        }
+
+        .alternatives-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .alternative-card {
+            background: white;
+            border: 3px solid #10b981;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .alternative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .alternative-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .alternative-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .alternative-description {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .pros-cons h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pros h4 {
+            color: #10b981;
+        }
+
+        .cons h4 {
+            color: #ef4444;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pros-cons li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botones compartir */
+        .share-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .share-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .share-subtitle {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-icon {
+            font-size: 1.3rem;
+        }
+
+        .share-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: linear-gradient(135deg, #1DA1F2, #0c85d0);
+            color: white;
+        }
+
+        .share-btn.linkedin {
+            background: linear-gradient(135deg, #0077B5, #005885);
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: linear-gradient(135deg, #1877F2, #0d5dbf);
+            color: white;
+        }
+
+        .share-btn.email {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .share-btn.copy {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .share-btn.copy.copied {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .back-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 35px 30px;
+            }
+
+            .article-title {
+                font-size: 2.2rem;
+            }
+
+            .risk-grid,
+            .alternatives-grid,
+            .scenario-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                gap: 12px;
+            }
+            
+            .share-btn {
+                padding: 10px 16px;
+            }
+            
+            .share-text {
+                display: none;
+            }
+            
+            .share-icon {
+                font-size: 1.5rem;
+            }
+
+            .back-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .warning-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="../blog.html" class="nav-link">← Volver al Blog</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="category-badge">⚠️ Importante</span>
+                    <span class="article-date">📅 28 Octubre 2025</span>
+                </div>
+                <h1 class="article-title">Aval Hipotecario: Qué Es, Cuándo lo Necesitas y Riesgos</h1>
+                <p class="article-intro">
+                    ¿El banco te pide un avalista para la hipoteca? Descubre qué implica realmente ser avalista, 
+                    qué riesgos asumes, cuándo es obligatorio y qué alternativas existen antes de comprometer 
+                    a familiares o amigos.
+                </p>
+            </header>
+
+            <div class="article-content">
+                <div class="warning-hero">
+                    <div class="warning-icon">🚨</div>
+                    <h3>Decisión de Alto Riesgo</h3>
+                    <p class="warning-description">
+                        El avalista responde con TODO su patrimonio si el titular no paga. 
+                        Es una responsabilidad ILIMITADA y SOLIDARIA que puede durar décadas.
+                    </p>
+                </div>
+
+                <h2>¿Qué Es un Aval Hipotecario?</h2>
+                
+                <p>
+                    Un aval hipotecario es una <strong>garantía personal adicional</strong> que el banco exige cuando 
+                    considera que el solicitante de la hipoteca no tiene suficiente solvencia por sí solo.
+                </p>
+
+                <p>
+                    El avalista (o avalador) <strong>se compromete a pagar la deuda</strong> si el titular de la 
+                    hipoteca no puede o no quiere hacerlo. Es decir, asume la misma responsabilidad que el deudor principal.
+                </p>
+
+                <div class="danger-box">
+                    <p>
+                        🚨 <strong>Atención:</strong> NO confundas aval con fiador. El aval hipotecario es una 
+                        responsabilidad SOLIDARIA: el banco puede reclamarte a ti DIRECTAMENTE sin necesidad de 
+                        perseguir primero al titular. Eres igual de responsable que él.
+                    </p>
+                </div>
+
+                <h2>¿Cuándo Pide el Banco un Avalista?</h2>
+
+                <p>
+                    Los bancos solicitan avalistas en situaciones específicas donde perciben <strong>mayor riesgo 
+                    de impago</strong>:
+                </p>
+
+                <h3>1. Ingresos Insuficientes</h3>
+                <p>
+                    La cuota mensual supera el <strong>35-40% de los ingresos netos</strong> del solicitante. 
+                    El banco considera que no hay margen suficiente para imprevistos.
+                </p>
+
+                <div class="example-box">
+                    <h4>📊 Ejemplo: Ingresos Justos</h4>
+                    <div class="scenario-row">
+                        <span>Ingresos netos mensuales:</span>
+                        <strong>1.800€</strong>
+                    </div>
+                    <div class="scenario-row">
+                        <span>Cuota hipoteca solicitada:</span>
+                        <strong>750€</strong>
+                    </div>
+                    <div class="scenario-row">
+                        <span>Porcentaje sobre ingresos:</span>
+                        <strong style="color: #ef4444;">41.6%</strong>
+                    </div>
+                    <p style="margin-top: 15px; text-align: center; font-weight: 700; color: #ef4444;">
+                        ❌ Banco pide avalista porque supera el 40% recomendado
+                    </p>
+                </div>
+
+                <h3>2. Contrato Temporal o Inestable</h3>
+                <p>
+                    Trabajadores con <strong>contrato temporal, autónomos de reciente creación</strong> 
+                    (menos de 2 años), o empleo en sectores inestables.
+                </p>
+
+                <h3>3. Historial Crediticio Problemático</h3>
+                <p>
+                    Si apareces en registros de morosidad (RAI, ASNEF) o has tenido <strong>impagos previos</strong>, 
+                    aunque estén saldados.
+                </p>
+
+                <h3>4. Edad Avanzada</h3>
+                <p>
+                    Solicitantes mayores de 60-65 años que no terminarán de pagar la hipoteca antes de la 
+                    <strong>edad máxima permitida</strong> (normalmente 75-80 años).
+                </p>
+
+                <h3>5. Hipoteca al 90-100%</h3>
+                <p>
+                    Cuando solicitas <strong>financiar más del 80%</strong> del valor de la vivienda. 
+                    El banco tiene menos garantía inmobiliaria y exige garantía personal adicional.
+                </p>
+
+                <h3>6. Primera Vivienda sin Historial</h3>
+                <p>
+                    Compradores jóvenes sin historial crediticio previo, aunque tengan ingresos suficientes. 
+                    El banco no tiene datos para evaluar tu comportamiento de pago.
+                </p>
+
+                <h2>Responsabilidad del Avalista</h2>
+
+                <p>
+                    Ser avalista NO es simplemente "firmar un papel". Es una <strong>responsabilidad legal</strong> 
+                    que puede durar 20-30 años y comprometer todo tu patrimonio.
+                </p>
+
+                <div class="risk-grid">
+                    <div class="risk-card high-risk">
+                        <div class="risk-icon">💸</div>
+                        <h3 class="risk-title">Responsabilidad Ilimitada</h3>
+                        <p class="risk-description">
+                            Respondes con TODO tu patrimonio presente y futuro: sueldo, cuentas bancarias, 
+                            propiedades, inversiones. El banco puede embargarlo todo si hay impago.
+                        </p>
+                    </div>
+
+                    <div class="risk-card high-risk">
+                        <div class="risk-icon">👥</div>
+                        <h3 class="risk-title">Solidaria y Mancomunada</h3>
+                        <p class="risk-description">
+                            El banco puede reclamarte a TI directamente sin intentar cobrar primero al titular. 
+                            Eres igual de responsable que el deudor principal desde el primer día.
+                        </p>
+                    </div>
+
+                    <div class="risk-card medium-risk">
+                        <div class="risk-icon">📅</div>
+                        <h3 class="risk-title">Duración Completa</h3>
+                        <p class="risk-description">
+                            Tu responsabilidad dura TODA la vida del préstamo (25-30 años) salvo que el banco 
+                            acepte liberarte. No puedes renunciar unilateralmente.
+                        </p>
+                    </div>
+
+                    <div class="risk-card medium-risk">
+                        <div class="risk-icon">🏦</div>
+                        <h3 class="risk-title">Afecta Tu Capacidad</h3>
+                        <p class="risk-description">
+                            Mientras seas avalista, los bancos consideran que tienes esa deuda pendiente. 
+                            Reduce tu capacidad para pedir tu propia hipoteca o préstamos.
+                        </p>
+                    </div>
+                </div>
+
+                <h2>¿Qué Pasa Si el Titular No Paga?</h2>
+
+                <p>
+                    Este es el escenario que todos quieren evitar pero que <strong>debes conocer ANTES de firmar</strong>:
+                </p>
+
+                <div class="example-box">
+                    <h4>🔴 Cronología de un Impago con Avalista</h4>
+                    
+                    <ol style="padding-left: 20px;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Mes 1-3 de impago:</strong> El banco reclama al titular principal. 
+                            Te notifican como avalista pero aún no te reclaman pago.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Mes 3-6:</strong> El banco puede empezar a reclamarte a TI directamente 
+                            el pago completo de las cuotas atrasadas + intereses de demora.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>A partir del mes 6:</strong> El banco puede ejecutar la hipoteca, 
+                            vender la vivienda del titular Y reclamarte a ti la diferencia si no cubre toda la deuda.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Embargo:</strong> Si no pagas, el banco puede embargar tus cuentas, 
+                            tu sueldo (hasta el 30%), tus propiedades. Todo tu patrimonio está en riesgo.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Largo plazo:</strong> Aunque la vivienda se venda, si el precio no cubre 
+                            la deuda pendiente, SIGUES debiendo el resto. Puede ser 50.000-100.000€ más.
+                        </li>
+                    </ol>
+
+                    <p style="margin-top: 25px; text-align: center; font-weight: 700; font-size: 1.1rem; color: #ef4444;">
+                        ⚠️ El avalista NO hereda la vivienda, solo la DEUDA
+                    </p>
+                </div>
+
+                <div class="danger-box">
+                    <p>
+                        🚨 <strong>Dato brutal:</strong> Si venden la casa por 150.000€ pero se debían 180.000€, 
+                        el avalista debe pagar los 30.000€ restantes + gastos + intereses de demora. 
+                        Y no tiene la casa.
+                    </p>
+                </div>
+
+                <h2>Requisitos para Ser Avalista</h2>
+
+                <p>
+                    No cualquiera puede ser avalista. El banco exige que el avalador tenga <strong>solvencia 
+                    demostrable</strong>:
+                </p>
+
+                <div class="checklist">
+                    <h4>✅ Requisitos Habituales del Banco</h4>
+                    <ul>
+                        <li><strong>Ingresos demostrables</strong> - Nómina, declaración renta, actividad económica estable</li>
+                        <li><strong>Contrato indefinido</strong> - O autónomo con 2-3 años de antigüedad mínimo</li>
+                        <li><strong>Sin deudas previas</strong> - No aparecer en registros de morosidad (RAI, ASNEF)</li>
+                        <li><strong>Edad apropiada</strong> - Normalmente entre 25-65 años (según plazo hipoteca)</li>
+                        <li><strong>Residencia en España</strong> - O capacidad de responder legalmente</li>
+                        <li><strong>Capacidad económica</strong> - Sus ingresos + los del titular deben cubrir 3-4 veces la cuota</li>
+                        <li><strong>Patrimonio propio</strong> - Mejor si tiene propiedades o ahorros significativos</li>
+                        <li><strong>Historial crediticio positivo</strong> - Préstamos anteriores pagados correctamente</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>
+                        💡 <strong>Importante:</strong> Si eres avalista, el banco estudiará tu situación 
+                        financiera igual que la del titular. Tendrás que aportar nóminas, declaración de renta, 
+                        extractos bancarios, etc.
+                    </p>
+                </div>
+
+                <h2>Tipos de Avales Hipotecarios</h2>
+
+                <h3>1. Aval Personal (el más común)</h3>
+                <p>
+                    Un familiar (padre, madre, hermano) o amigo avala con su patrimonio personal. Es <strong>solidario 
+                    e ilimitado</strong>: responde con todo lo que tiene.
+                </p>
+
+                <h3>2. Aval Mancomunado</h3>
+                <p>
+                    Dos o más avalistas comparten la responsabilidad. Cada uno responde por su parte proporcional. 
+                    <strong>Menos común</strong> porque el banco prefiere que todos respondan solidariamente.
+                </p>
+
+                <h3>3. Aval de Empresa</h3>
+                <p>
+                    Una empresa avala al trabajador. Muy raro, solo en grandes empresas y directivos de alto nivel.
+                </p>
+
+                <h3>4. Aval Público (AVAL ICO o Similar)</h3>
+                <p>
+                    El Estado o entidades públicas avalan parte de la hipoteca (normalmente 20%). Disponible para 
+                    <strong>jóvenes menores de 35 años</strong> con ciertas condiciones.
+                </p>
+
+                <h2>¿Puedes Dejar de Ser Avalista?</h2>
+
+                <p>
+                    Esta es una de las preguntas más importantes: <strong>NO puedes renunciar unilateralmente</strong>. 
+                    Una vez firmas, estás vinculado hasta que:
+                </p>
+
+                <h3>Opciones para Salir del Aval:</h3>
+
+                <ul>
+                    <li>
+                        <strong>El titular cancela totalmente la hipoteca</strong> - Obviamente, si paga todo, 
+                        tu responsabilidad termina.
+                    </li>
+                    <li>
+                        <strong>El banco acepta liberarte</strong> - Debe evaluar que el titular ahora tiene 
+                        suficiente solvencia por sí solo. No es automático, es decisión del banco.
+                    </li>
+                    <li>
+                        <strong>Sustituir el aval por otra garantía</strong> - Ejemplo: el titular aporta más entrada, 
+                        encuentra otro avalista, o mejora sus ingresos significativamente.
+                    </li>
+                    <li>
+                        <strong>Subrogación de la hipoteca</strong> - Si el titular cambia a otro banco, el nuevo 
+                        banco podría no exigir aval (pero deberías negociarlo antes).
+                    </li>
+                </ul>
+
+                <div class="warning-box">
+                    <p>
+                        ⚠️ <strong>Realidad:</strong> En la práctica, salir de un aval es MUY DIFÍCIL. Los bancos 
+                        raramente aceptan liberar avalistas porque pierden garantías. Asume que estarás vinculado 
+                        todo el plazo de la hipoteca (20-30 años).
+                    </p>
+                </div>
+
+                <h2>Caso Real: Lo Que Puede Salir Mal</h2>
+
+                <div class="example-box">
+                    <h4>📖 Historia Real: Padre Avalista de Hijo</h4>
+                    
+                    <p style="margin-bottom: 20px;">
+                        <strong>Situación inicial (2015):</strong> Luis, 30 años, compra piso de 200.000€. 
+                        Pide hipoteca de 180.000€ al 2.5% a 30 años. Su padre, Juan (60 años), avala porque 
+                        Luis tiene contrato temporal.
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>Años 1-5:</strong> Luis paga perfectamente. Juan tranquilo, "solo firmé un papel".
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>Año 6 (2021):</strong> Luis pierde empleo por reestructuración empresa. 
+                        Paro 6 meses. Deja de pagar hipoteca.
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>Mes 4 de impago:</strong> Banco reclama a Juan. Juan debe pagar 4 cuotas 
+                        atrasadas + intereses demora = 3.500€.
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>Mes 8:</strong> Luis encuentra trabajo pero con menor sueldo. No puede asumir 
+                        cuota completa. Juan debe seguir ayudando con 200€/mes.
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>Año 8 (2023):</strong> Juan quiere pedir préstamo para reformar SU casa. 
+                        Banco rechaza: "Usted ya tiene una hipoteca de 170.000€ pendiente (la de su hijo)".
+                    </p>
+
+                    <p style="margin-bottom: 20px;">
+                        <strong>2025 (actualidad):</strong> Juan, 70 años, jubilado, sigue siendo avalista 
+                        de deuda de 160.000€. Su pensión es de 1.400€. Si Luis tuviera otro problema, 
+                        Juan podría perder su piso.
+                    </p>
+
+                    <p style="margin-top: 25px; text-align: center; font-weight: 700; color: #ef4444;">
+                        💔 Resultado: Padre hipotecó su tranquilidad y capacidad financiera por 30 años
+                    </p>
+                </div>
+
+                <h2>Alternativas al Aval Personal</h2>
+
+                <p>
+                    Antes de comprometer a un familiar, <strong>explora estas opciones</strong>:
+                </p>
+
+                <div class="alternatives-grid">
+                    <div class="alternative-card">
+                        <div class="alternative-icon">💰</div>
+                        <h3 class="alternative-title">Aportar Más Entrada</h3>
+                        <p class="alternative-description">
+                            Si reduces el importe a financiar al 70-75% del valor, el banco puede no exigir aval. 
+                            Menos riesgo para ellos.
+                        </p>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>No comprometes a nadie</li>
+                                <li>Cuota mensual menor</li>
+                                <li>Menos intereses totales</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Necesitas más ahorros</li>
+                                <li>Menos liquidez inicial</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alternative-card">
+                        <div class="alternative-icon">🏦</div>
+                        <h3 class="alternative-title">Aval Público ICO</h3>
+                        <p class="alternative-description">
+                            Si eres menor de 35 años, puedes acceder a avales públicos que cubren hasta el 20% 
+                            de la hipoteca. El Estado avala, no tu familia.
+                        </p>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>No comprometes familiares</li>
+                                <li>Puedes financiar hasta 100%</li>
+                                <li>Condiciones favorables</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Solo menores 35 años</li>
+                                <li>Límites de precio vivienda</li>
+                                <li>Requisitos específicos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alternative-card">
+                        <div class="alternative-icon">🤝</div>
+                        <h3 class="alternative-title">Co-titularidad</h3>
+                        <p class="alternative-description">
+                            En vez de avalista, que la persona sea CO-TITULAR de la hipoteca. Comparten propiedad 
+                            Y deuda, pero es más justo.
+                        </p>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>Más justo: tiene derechos sobre la casa</li>
+                                <li>Banco lo ve mejor</li>
+                                <li>Suma ingresos de ambos</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Comparte propiedad de la casa</li>
+                                <li>Más complejo legalmente</li>
+                                <li>Problemas si hay conflicto</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alternative-card">
+                        <div class="alternative-icon">⏳</div>
+                        <h3 class="alternative-title">Esperar y Mejorar Perfil</h3>
+                        <p class="alternative-description">
+                            Si es posible, espera 1-2 años: consigue contrato indefinido, aumenta ahorros, 
+                            mejora historial crediticio. Evitas comprometer a nadie.
+                        </p>
+                        <div class="pros-cons pros">
+                            <h4>✓ Ventajas</h4>
+                            <ul>
+                                <li>Mejor posición negociadora</li>
+                                <li>No necesitas aval</li>
+                                <li>Mejores condiciones</li>
+                            </ul>
+                        </div>
+                        <div class="pros-cons cons">
+                            <h4>✗ Desventajas</h4>
+                            <ul>
+                                <li>Retrasas la compra</li>
+                                <li>Precios pueden subir</li>
+                                <li>Puedes perder la vivienda</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Consejos Si Vas a Ser Avalista</h2>
+
+                <p>
+                    Si finalmente decides avalar (o te lo piden), <strong>SIEMPRE sigue estas reglas</strong>:
+                </p>
+
+                <div class="checklist">
+                    <h4>🛡️ Protecciones Obligatorias</h4>
+                    <ul>
+                        <li><strong>Lee TODO el contrato</strong> - No firmes sin entender cada cláusula. Pide tiempo.</li>
+                        <li><strong>Asesoramiento legal independiente</strong> - Consulta tu propio abogado, no el del banco.</li>
+                        <li><strong>Pide simulaciones</strong> - ¿Qué pasa si hay 3 meses de impago? ¿Cuánto te reclamarían?</li>
+                        <li><strong>Seguro de protección de pagos</strong> - Exige que el titular contrate seguro que cubra impagos por desempleo/enfermedad.</li>
+                        <li><strong>Acuerdo privado por escrito</strong> - Con el titular: qué pasa si tienes que pagar tú, cómo te devuelve el dinero.</li>
+                        <li><strong>Revisa tu propia capacidad</strong> - ¿Podrías pagar esa cuota si fuera necesario? Sin arruinarte.</li>
+                        <li><strong>Limita el aval si es posible</strong> - Negocia que sea por una cantidad máxima o tiempo limitado (difícil pero intenta).</li>
+                        <li><strong>Transparencia total</strong> - El titular debe compartir contigo TODA la información de la hipoteca mensualmente.</li>
+                    </ul>
+                </div>
+
+                <div class="danger-box">
+                    <p>
+                        🚨 <strong>Regla de oro:</strong> Si tienes la MÍNIMA duda sobre la solvencia del titular, 
+                        o sobre su responsabilidad, o sobre tu relación a largo plazo con esa persona... 
+                        <strong>NO AVALES. NUNCA.</strong> Ninguna casa vale arruinar tu vida financiera o romper una familia.
+                    </p>
+                </div>
+
+                <h2>Preguntas Frecuentes</h2>
+
+                <h3>¿Puedo avalar sin tener propiedades?</h3>
+                <p>
+                    SÍ, pero el banco preferirá avalistas con patrimonio (casa propia). Sin propiedades, 
+                    tu sueldo es la garantía. Si es suficientemente alto y estable, puede valer.
+                </p>
+
+                <h3>¿Cuántos avalistas se pueden poner?</h3>
+                <p>
+                    Normalmente <strong>uno o dos como máximo</strong>. El banco valorará la suma de ingresos 
+                    de todos (titular + avalistas). Más de dos es raro salvo hipotecas muy grandes.
+                </p>
+
+                <h3>¿El avalista aparece como propietario?</h3>
+                <p>
+                    <strong>NO</strong>. El avalista NO tiene derecho sobre la vivienda. Solo tiene la OBLIGACIÓN 
+                    de pagar. No puede vivir en ella, ni venderla, ni heredarla. Solo paga si hay problemas.
+                </p>
+
+                <h3>¿Qué pasa si muere el titular?</h3>
+                <p>
+                    La deuda la heredan los herederos del titular. Si no la aceptan o no pueden pagarla, 
+                    <strong>el avalista debe seguir pagando</strong>. La muerte no libera al avalista.
+                </p>
+
+                <h3>¿Y si muere el avalista?</h3>
+                <p>
+                    Sus herederos NO heredan la obligación de aval (a diferencia de la deuda principal). 
+                    El aval se extingue. Pero el banco podría exigir al titular un nuevo avalista o 
+                    revisar las condiciones.
+                </p>
+
+                <h3>¿Afecta al avalista para su propia hipoteca?</h3>
+                <p>
+                    <strong>SÍ, MUCHO</strong>. Los bancos consideran que tienes esa deuda pendiente al calcular 
+                    tu capacidad de endeudamiento. Reduces tu capacidad para pedir tu propia hipoteca o préstamos.
+                </p>
+
+                <h3>¿Puedo avalar a varias personas?</h3>
+                <p>
+                    Técnicamente sí, pero <strong>NO es recomendable</strong>. Cada aval suma deuda "virtual" 
+                    en tu historial. Avalar a dos personas significa que respondes por dos hipotecas completas. 
+                    Es suicidio financiero.
+                </p>
+
+                <h3>¿El banco puede ejecutar mi casa si soy avalista?</h3>
+                <p>
+                    <strong>SÍ</strong>. Si no pagas lo que te reclaman como avalista, el banco puede embargar 
+                    y subastar TU vivienda para cobrar. Tu casa está en riesgo real.
+                </p>
+
+                <div class="cta-section">
+                    <h3>🧮 Calcula Tu Hipoteca</h3>
+                    <p>
+                        Antes de pedir un avalista, verifica si realmente lo necesitas. 
+                        Usa nuestro simulador para calcular tu capacidad real y explorar opciones.
+                    </p>
+                    <a href="../../simulador-avanzado.html" class="cta-button">
+                        Calcular Capacidad →
+                    </a>
+                </div>
+
+                <h2>Conclusión: Piénsalo Muy Bien</h2>
+
+                <p>
+                    Ser avalista es una de las <strong>decisiones financieras más arriesgadas</strong> que puedes tomar. 
+                    No es "ayudar con un papeleito". Es comprometer TODO tu patrimonio durante décadas.
+                </p>
+
+                <p>
+                    <strong>Puntos clave para recordar:</strong>
+                </p>
+                <ul>
+                    <li>Responsabilidad ILIMITADA con todo tu patrimonio</li>
+                    <li>Duración de 20-30 años sin poder renunciar</li>
+                    <li>El banco puede reclamarte directamente a ti</li>
+                    <li>Afecta tu capacidad para pedir tus propios préstamos</li>
+                    <li>No tienes derecho sobre la vivienda, solo la obligación de pagar</li>
+                    <li>Puede arruinar tu vida financiera si el titular no paga</li>
+                    <li>Difícil salir del aval una vez firmado</li>
+                </ul>
+
+                <p>
+                    <strong>Antes de firmar:</strong>
+                </p>
+                <ul>
+                    <li>Explora TODAS las alternativas (más entrada, aval público, co-titularidad, esperar)</li>
+                    <li>Evalúa honestamente la solvencia y responsabilidad del titular</li>
+                    <li>Consulta con un abogado independiente</li>
+                    <li>Calcula si TÚ podrías pagar esa cuota sin arruinarte</li>
+                    <li>Habla claro con el titular sobre riesgos y expectativas</li>
+                    <li>Documento todo por escrito</li>
+                </ul>
+
+                <div class="danger-box">
+                    <p>
+                        🚨 <strong>Mensaje final:</strong> Muchas familias se han roto por avales que salieron mal. 
+                        Padres que perdieron su casa, hermanos que no se hablan, matrimonios destruidos. 
+                        Si tienes dudas, la respuesta es NO. Protege tu futuro financiero y tus relaciones personales. 
+                        Ninguna casa vale ese precio.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Botones de Compartir -->
+        <div class="share-section">
+            <h3 class="share-title">💬 Comparte este artículo</h3>
+            <p class="share-subtitle">Ayuda a otros a entender los riesgos del aval hipotecario</p>
+            <div class="share-buttons">
+                <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp(event)">
+                    <span class="share-icon">📱</span>
+                    <span class="share-text">WhatsApp</span>
+                </a>
+                <a href="#" class="share-btn twitter" onclick="shareTwitter(event)">
+                    <span class="share-icon">🐦</span>
+                    <span class="share-text">Twitter</span>
+                </a>
+                <a href="#" class="share-btn linkedin" onclick="shareLinkedIn(event)">
+                    <span class="share-icon">💼</span>
+                    <span class="share-text">LinkedIn</span>
+                </a>
+                <a href="#" class="share-btn facebook" onclick="shareFacebook(event)">
+                    <span class="share-icon">📘</span>
+                    <span class="share-text">Facebook</span>
+                </a>
+                <a href="#" class="share-btn email" onclick="shareEmail(event)">
+                    <span class="share-icon">✉️</span>
+                    <span class="share-text">Email</span>
+                </a>
+                <a href="#" class="share-btn copy" onclick="copyLink(event)">
+                    <span class="share-icon">🔗</span>
+                    <span class="share-text">Copiar link</span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+        function shareWhatsApp(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+        }
+
+        function shareTwitter(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareLinkedIn(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareFacebook(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
+        }
+
+        function shareEmail(e) {
+            e.preventDefault();
+            const url = window.location.href;
+            const title = document.title;
+            window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent('Te comparto este artículo importante sobre avales hipotecarios: ' + url)}`;
+        }
+
+        function copyLink(e) {
+            e.preventDefault();
+            const btn = e.currentTarget;
+            const url = window.location.href;
+            
+            navigator.clipboard.writeText(url).then(() => {
+                btn.classList.add('copied');
+                const textSpan = btn.querySelector('.share-text');
+                const originalText = textSpan.textContent;
+                textSpan.textContent = '¡Copiado!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    textSpan.textContent = originalText;
+                }, 2000);
+            });
+        }
+        </script>
+
+        <div class="back-links">
+            <a href="../blog.html" class="back-link">← Volver al Blog</a>
+            <a href="../../index.html" class="back-link">Ir al Inicio →</a>
+        </div>
+    </div>
+  <script type='text/javascript' src='//pl27742916.effectivegatecpm.com/be/9a/dd/be9add3c482fa41eb4b5c0a4e1f85e74.js'></script>
+</body>
+
+</html>
